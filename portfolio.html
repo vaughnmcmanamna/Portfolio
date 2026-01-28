@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaughn McManamna - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Computer Modern', 'Latin Modern Roman', 'Times New Roman', Georgia, serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            color: #000;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0;
+            text-align: left;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            justify-content: center;
+        }
+
+        .header-text {
+            flex: 0 1 auto;
+        }
+
+        .contact-top {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .contact-top a {
+            color: #333;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f5f5f5;
+        }
+
+        .contact-top a:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .contact-top svg {
+            display: block;
+        }
+
+        .profile-picture {
+            flex-shrink: 0;
+        }
+
+        .profile-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            border: 3px solid #e0e0e0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .bio {
+            margin-bottom: 50px;
+            color: #555;
+            line-height: 1.7;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .toggle-container {
+            margin-bottom: 40px;
+        }
+
+        .toggle-buttons {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .toggle-btn {
+            padding: 8px 24px;
+            border: none;
+            background: #f5f5f5;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.15s ease;
+            border-radius: 6px;
+            color: #666;
+        }
+
+        .toggle-btn:hover {
+            background: #e5e5e5;
+            color: #333;
+        }
+
+        .toggle-btn.active {
+            background: #000;
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .timeline-item {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.2s ease;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .timeline-item.expandable {
+            cursor: pointer;
+            padding: 15px;
+            margin-left: -15px;
+            margin-right: -15px;
+            border-radius: 4px;
+        }
+
+        .timeline-item.expandable:hover {
+            background-color: #fafafa;
+        }
+
+        .timeline-header {
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+
+        .timeline-company {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .timeline-date {
+            color: #999;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .timeline-description {
+            color: #555;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        .timeline-description ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        .timeline-description li {
+            margin-bottom: 6px;
+        }
+
+        .timeline-description li:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-description strong {
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .timeline-details {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .timeline-details.show {
+            display: block;
+        }
+
+        .timeline-details p {
+            margin-bottom: 10px;
+        }
+
+        .timeline-details ul {
+            margin-top: 8px;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .timeline-details li {
+            margin-bottom: 6px;
+        }
+
+        .class-tag {
+            display: inline-block;
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            padding: 6px 12px;
+            margin: 3px 3px 3px 0;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+
+        .coursework-section {
+            margin-top: 10px;
+        }
+
+        .coursework-category {
+            margin-bottom: 15px;
+            line-height: 2;
+            font-size: 0;
+        }
+        
+        .coursework-category strong {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1, .subtitle {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .toggle-btn {
+                padding: 8px 20px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Contact Links -->
+        <div class="contact-top">
+            <a href="mailto:vaughnmcmanamna03@gmail.com">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
+            <a href="https://github.com/vaughnmcmanamna" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="tel:236-380-3921">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Header Section with Profile Picture and Name -->
+        <div class="header-section">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Vaughn McManamna" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #e0e0e0;">
+            </div>
+            <div class="header-text">
+                <h1>Vaughn McManamna</h1>
+                <p class="subtitle">Computer Science Student | University of Victoria</p>
+            </div>
+        </div>
+        
+        <div class="bio">
+            <p>
+                I'm a 4th year Computer Science student at UVic based in Victoria, BC. I have a strong 
+                background in mathematics and statistics, with experience in machine learning and working 
+                with large-scale datasets. I've built data-driven applications with a focus on turning data into meaningful insights through
+                visualizations. I've also dipped my toes into functional programming and love Haskell for 
+                its elegance.
+            </p>
+        </div>
+
+        <div style="max-width: 700px; margin: 0 auto 50px auto; padding: 20px; background: #fafafa; border-radius: 6px;">
+            <p style="margin-bottom: 8px; color: #555;"><strong>Languages:</strong> Python, C, JavaScript, Haskell, Rust (learning)</p>
+            <p style="margin-bottom: 0; color: #555;"><strong>Tools & Frameworks:</strong> SQL, Git, D3.js, scikit-learn, Plotly.js, pandas, NumPy, Figma, Vite</p>
+        </div>
+
+        <!-- Toggle Section -->
+        <div class="toggle-container">
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" onclick="showContent('projects')">Projects</button>
+                <button class="toggle-btn" onclick="showContent('work')">Work Experience</button>
+                <button class="toggle-btn" onclick="showContent('education')">Education</button>
+            </div>
+
+            <!-- Projects Content -->
+            <div id="projects" class="content-section active">
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
+                            <div class="timeline-company">JavaScript, Python, D3.js, Plotly.js, scikit-learn</div>
+                        </div>
+                        <div class="timeline-date">May 2025 - Jan 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline 
+                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy, 
+                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed 
+                        1000+ raw match records with data cleaning and derived metrics.
+                        <div style="margin-top: 10px;">
+                            <a href="https://github.com/vaughnmcmanamna" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Technical Highlights:</strong></p>
+                        <ul>
+                            <li>Processed 1000+ match records with extensive data cleaning and feature engineering</li>
+                            <li>Built Decision Tree classifier identifying key performance indicators (Score, Damage, K/D)</li>
+                            <li>Created modular architecture separating data handling, visualization, and ML predictions</li>
+                            <li>Implemented real-time filtering with pan/zoom controls and mobile-first 4:3 layouts</li>
+                            <li>Live prediction system with confidence metrics and evaluation outputs</li>
+                        </ul>
+                        <p><strong>Technologies:</strong></p>
+                        <ul>
+                            <li>Frontend: JavaScript, D3.js, Plotly.js for interactive visualizations</li>
+                            <li>Backend: Python with scikit-learn for machine learning pipeline</li>
+                            <li>Deployed on GitHub Pages with automated data processing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">3D Scene with Advanced Shaders & Textures</div>
+                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Built an animated 3D scene demonstrating advanced graphics techniques including per-fragment lighting, 
+                        custom shaders, texture mapping, hierarchical transformations, and camera animation. Converted Phong 
+                        lighting from vertex to fragment shader for more accurate rendering, implemented Blinn-Phong model, 
+                        and created custom shader effects with detailed inline documentation.
+                        <div style="margin-top: 10px;">
+                            <a href="https://vaughnmcmanamna.github.io/305-A2/" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View Live Demo →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Shader Programming:</strong></p>
+                        <ul>
+                            <li><strong>Per-Fragment Lighting:</strong> Converted vertex shader lighting to fragment shader for more accurate illumination calculations on curved surfaces</li>
+                            <li><strong>Blinn-Phong Model:</strong> Implemented Blinn-Phong reflection model for more realistic specular highlights compared to standard Phong</li>
+                            <li><strong>Custom Shader Effects:</strong> Designed and documented custom GLSL shaders with line-by-line comments explaining the math and purpose</li>
+                            <li>Proper normal transformation using normal matrix for correct lighting under transformations</li>
+                        </ul>
+                        <p><strong>Scene Features:</strong></p>
+                        <ul>
+                            <li>Hierarchical models with multi-level transformations (body parts connected logically at joints)</li>
+                            <li>Multiple textures mapped meaningfully to objects beyond default UV coordinates</li>
+                            <li>360° camera fly-around using lookAt() - camera circles while focusing on a central point</li>
+                            <li>Real-time synchronization ensuring simulated time matches actual time</li>
+                            <li>Frame rate monitoring displayed every 2 seconds</li>
+                        </ul>
+                        <p><strong>Technical Implementation:</strong></p>
+                        <ul>
+                            <li>Proper rotation of hierarchical elements around connection points to prevent visual breakage</li>
+                            <li>Time-based animation using timestamp/delta time for consistent motion across different frame rates</li>
+                            <li>Texture handling with HTTP server setup to bypass browser security restrictions</li>
+                            <li>Clean code architecture with proper function separation and documentation</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project deepened my understanding of the graphics pipeline, particularly the difference between 
+                        vertex and fragment shading. Moving lighting calculations to the fragment shader showed me how 
+                        per-pixel operations dramatically improve visual quality. Implementing Blinn-Phong taught me how small 
+                        mathematical optimizations (using half-vector instead of reflection vector) can both improve performance 
+                        and visual results. The custom shader work really cemented my understanding of GLSL and GPU programming.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">AI Portfolio Website</div>
+                            <div class="timeline-company">Machine Learning & AI Showcase</div>
+                        </div>
+                        <div class="timeline-date">2024-2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        Interactive website showcasing machine learning and AI concepts I've learned throughout my studies. 
+                        Includes visual demonstrations and implementations of various ML algorithms and techniques.
+                        <div style="margin-top: 10px;">
+                            <a href="https://vaughnmcmanamna.github.io/AI-portfolio/index.html" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View Live Site →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Visual demonstrations of supervised and unsupervised learning algorithms</li>
+                            <li>Interactive examples showing neural networks, decision trees, and clustering</li>
+                            <li>Explanations of key ML concepts with code examples</li>
+                            <li>Built with modern web technologies for smooth interactivity</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <ul>
+                            <li>Deep understanding of ML algorithm internals through implementation</li>
+                            <li>How to explain complex technical concepts visually</li>
+                            <li>Web development skills for creating educational content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Deal or No Deal - NBA Edition</div>
+                            <div class="timeline-company">JavaScript, Vite, Tailwind CSS</div>
+                        </div>
+                        <div class="timeline-date">Jan 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        Quick proof-of-concept NBA-themed Deal or No Deal game. Instead of money, cases contain NBA 
+                        players rated by my personal rankings. Play through 5 rounds (one per position: PG, SG, SF, PF, C) 
+                        selecting cases and getting banker offers. Built to practice game logic and state management - rough 
+                        around the edges but demonstrates core programming concepts.
+                        <div style="margin-top: 10px;">
+                            <a href="https://github.com/vaughnmcmanamna" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Game Concept:</strong></p>
+                        <ul>
+                            <li>Cases contain NBA players instead of dollar amounts</li>
+                            <li>Players are ranked based on my personal ratings system</li>
+                            <li>5 rounds of gameplay, each representing a basketball position (Point Guard, Shooting Guard, Small Forward, Power Forward, Center)</li>
+                            <li>Banker makes offers based on remaining player values and round progression</li>
+                        </ul>
+                        <p><strong>Technical Implementation:</strong></p>
+                        <ul>
+                            <li>Vanilla JavaScript for game logic - managing case selection, player reveals, and banker calculations</li>
+                            <li>State management to track opened cases, remaining players, and position-based rounds</li>
+                            <li>Real-time UI updates showing available cases and current game status</li>
+                            <li>Vite for development workflow and Tailwind CSS for styling</li>
+                        </ul>
+                        <p><strong>Status:</strong></p>
+                        <p>This is a rough proof of concept built for practice and experimentation. It demonstrates 
+                        my ability to build interactive applications and handle complex game state, though it could use polish 
+                        in terms of UI/UX and additional features.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">3D Underwater Scene with WebGL</div>
+                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Built an interactive 3D underwater scene from scratch using WebGL and GLSL shaders. Implemented 
+                        custom vertex and fragment shaders to handle lighting calculations (Phong illumination), managed 
+                        3D transformations with matrix math, and created procedurally generated geometry for spheres, 
+                        cylinders, and cones. Features animated fish, swaying seaweed, and bubble physics.
+                        <div style="margin-top: 10px;">
+                            <a href="https://vaughnmcmanamna.github.io/305-A1/main.html" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View Live Demo →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Graphics Programming from Scratch:</strong></p>
+                        <ul>
+                            <li><strong>Custom Shaders:</strong> Wrote GLSL vertex and fragment shaders to calculate lighting per-vertex using the Phong illumination model (ambient + diffuse + specular)</li>
+                            <li><strong>3D Math:</strong> Manually handled all transformation matrices (translation, rotation, scaling) and their multiplication order to position objects in 3D space</li>
+                            <li><strong>Normal Matrix Calculations:</strong> Computed inverse-transpose of model-view matrix to correctly transform surface normals for lighting</li>
+                            <li><strong>Procedural Geometry:</strong> Generated sphere, cylinder, and cone meshes by calculating vertex positions and normals using parametric equations</li>
+                        </ul>
+                        <p><strong>Scene Features:</strong></p>
+                        <ul>
+                            <li>Animated fish swimming in a circle - calculated circular motion path and tangent vectors for orientation</li>
+                            <li>Character with articulated legs - implemented hierarchical transformations with rotation constraints for realistic swimming motion</li>
+                            <li>Swaying seaweed made from ellipsoids with sine-wave animation</li>
+                            <li>Bubble system with randomized spawning and upward physics</li>
+                        </ul>
+                        <p><strong>Technical Challenges Solved:</strong></p>
+                        <ul>
+                            <li>Managing transformation matrix stack (push/pop) for hierarchical object modeling</li>
+                            <li>Synchronizing real-time animations using delta time calculations</li>
+                            <li>Calculating surface normals for curved geometry to achieve smooth lighting</li>
+                            <li>Understanding GPU pipeline - how vertices flow from JavaScript through shaders to pixels on screen</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project gave me a deep understanding of how 3D graphics work at a low level. Instead of using a game engine, I had to implement everything from scratch - the math behind projections, how lighting actually works on surfaces, and how the GPU pipeline transforms 3D coordinates into 2D pixels. It's one thing to use a graphics library, but actually implementing the rendering pipeline yourself really cements the concepts.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">UVic Gym App Redesign</div>
+                            <div class="timeline-company">CSC 365: Systems Analysis</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Led prototyping and flow design for UVic gym booking system. Created interactive Figma prototype 
+                        for booking, live occupancy, and schedules. Built components, click-through flows, and Draw.io 
+                        diagrams to map user interactions. Conducted user research and usability testing with a 4-person team.
+                        <div style="margin-top: 10px;">
+                            <a href="https://github.com/vaughnmcmanamna" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View Project →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Project Scope:</strong></p>
+                        <ul>
+                            <li>Redesigned the existing UVic gym booking interface to improve user experience</li>
+                            <li>Added live occupancy tracking to help students plan their visits</li>
+                            <li>Streamlined the booking flow to reduce confusion and errors</li>
+                            <li>Created schedule views for classes and equipment availability</li>
+                        </ul>
+                        <p><strong>My Role:</strong></p>
+                        <ul>
+                            <li>Led the prototyping effort in Figma, creating all major screens and interactions</li>
+                            <li>Built reusable components for consistent design across the app</li>
+                            <li>Created click-through prototypes for user testing sessions</li>
+                            <li>Developed workflow diagrams to document system processes and user flows</li>
+                        </ul>
+                        <p><strong>Outcomes:</strong></p>
+                        <ul>
+                            <li>User testing revealed 40% faster booking completion times</li>
+                            <li>Identified and fixed major pain points in the original interface</li>
+                            <li>Delivered a complete prototype ready for development handoff</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Stamp Coverage Problem Solver</div>
+                            <div class="timeline-company">Haskell - CSC 330</div>
+                        </div>
+                        <div class="timeline-date">2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        Optimized a stamp combination problem using dynamic programming in Haskell. Reduced runtime 
+                        from exponential to polynomial time by storing and reusing previously computed results instead 
+                        of recalculating them. This was my introduction to functional programming and efficient algorithm design.
+                        <div style="margin-top: 10px;">
+                            <a href="https://github.com/vaughnmcmanamna" target="_blank" 
+                               onclick="event.stopPropagation();" 
+                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
+                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                View Code →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>The Challenge:</strong></p>
+                        <p>Given different stamp values (like 3¢, 5¢, 7¢) and a limit on total stamps used, 
+                        find the highest consecutive range of prices you can make starting from 1¢.</p>
+                        
+                        <p><strong>My Code:</strong></p>
+                        <pre style="background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto; font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 1.5;">largestReachable k stamps = findLastReachable 0 numStamps
+    where
+        numStamps = 0 : [minimum ([numStamps !! fromInteger (i - s) + 1 
+                                   | s <- stamps, s <= i] ++ [k + 1]) 
+                        | i <- [1..]]
+    
+        findLastReachable :: Integer -> [Integer] -> Integer
+        findLastReachable i (x:xs)
+            | x > k     = i - 1
+            | otherwise = findLastReachable (i + 1) xs</pre>
+                        
+                        <p><strong>What It Does:</strong></p>
+                        <ul>
+                            <li>Builds up solutions from small values to large ones</li>
+                            <li>For each value, finds the fewest stamps needed by checking all stamp combinations</li>
+                            <li>Remembers previous results so it doesn't recalculate the same thing twice</li>
+                            <li>Stops when it hits a value that needs too many stamps</li>
+                        </ul>
+
+                        <p><strong>Why It's Efficient:</strong></p>
+                        <ul>
+                            <li><strong>Naive approach:</strong> Try every possible stamp combination - incredibly slow (exponential growth)</li>
+                            <li><strong>My approach:</strong> Save work by reusing previous calculations - much faster (polynomial growth)</li>
+                            <li><strong>Real impact:</strong> What might take hours with brute force runs in milliseconds with this approach</li>
+                        </ul>
+                        
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project taught me how to break down complex problems into smaller, manageable pieces and 
+                        how choosing the right algorithm can dramatically improve performance. It also introduced me to 
+                        functional programming, which approaches problems differently than traditional imperative programming.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Work Experience Content -->
+            <div id="work" class="content-section">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Dishwasher / Front of Staff / Cook</div>
+                            <div class="timeline-company">Barb's Fish and Chips, Victoria BC</div>
+                        </div>
+                        <div class="timeline-date">May 2025 - Nov 2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Juggled dishwashing, cooking, and front counter duties during busy shifts</li>
+                            <li>Kept the kitchen running smoothly and up to health standards</li>
+                            <li>Dealt with customer orders and handled the occasional complaint</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Warehouse and Delivery Assistant</div>
+                            <div class="timeline-company">Vancouver Island Brewing, Victoria BC</div>
+                        </div>
+                        <div class="timeline-date">May 2023 - Aug 2023</div>
+                    </div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Loaded delivery trucks and organized shipments for local routes</li>
+                            <li>Helped with deliveries around Victoria, keeping to tight schedules</li>
+                            <li>Figured out logistics issues on the fly when things didn't go as planned</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Content -->
+            <div id="education" class="content-section">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Bachelor of Science in Computer Science</div>
+                            <div class="timeline-company">University of Victoria</div>
+                        </div>
+                        <div class="timeline-date">Sep 2021 - Present</div>
+                    </div>
+                    <div class="timeline-description">
+                        <p><strong>Expected Graduation:</strong> Spring 2026</p>
+                        <p><strong>Focus:</strong> Machine Learning, Data Visualization, and Distributed Systems</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Relevant Coursework</div>
+                            <div class="timeline-company">Computer Science & Mathematics</div>
+                        </div>
+                        <div class="timeline-date"></div>
+                    </div>
+                    <div class="timeline-description">
+                        <div class="coursework-section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 15px;">
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 8px;">Math & Theory</p>
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                                    <li>• Calculus I-III</li>
+                                    <li>• Matrix Algebra</li>
+                                    <li>• Probability and Statistics</li>
+                                    <li>• Logic and Foundations</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 8px;">Core CS</p>
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                                    <li>• Algorithms & Data Structures I & II</li>
+                                    <li>• Programming Languages</li>
+                                    <li>• Software Development Methods</li>
+                                    <li>• Systems Analysis</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 8px;">Systems</p>
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                                    <li>• Operating Systems</li>
+                                    <li>• Computer Communications and Networks</li>
+                                    <li>• Systems for Massive Datasets</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 8px;">Data & AI</p>
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                                    <li>• Database Systems</li>
+                                    <li>• Data Mining</li>
+                                    <li>• Introduction to Artificial Intelligence</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 8px;">Web & Graphics</p>
+                                <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.8;">
+                                    <li>• World Wide Web and Mobile Applications</li>
+                                    <li>• Introduction to Computer Graphics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(section).classList.add('active');
+            
+            event.target.classList.add('active');
+        }
+
+        function toggleDetails(element) {
+            const details = element.querySelector('.timeline-details');
+            
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+            } else {
+                details.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>
