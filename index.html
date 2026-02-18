@@ -303,6 +303,7 @@
                 font-size: 0.95rem;
             }
         }
+
     </style>
 </head>
 <body>
@@ -366,30 +367,59 @@
                 <div class="timeline-item expandable" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
+                            <div class="timeline-title">Video Game Interactive Map Guide</div>
+                            <div class="timeline-company">HTML, CSS, JavaScript, Photoshop</div>
+                        </div>
+                        <div class="timeline-date">Feb 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        An interactive map guide for Call of Duty: Black Ops 7 aimed at helping new players
+                        learn maps, callouts, and objectives. Features a clean dropdown-based interface for
+                        browsing game modes and maps. Focused on simplicity and clarity over complexity.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Dropdown-based navigation to select game modes and individual maps</li>
+                            <li>Clear layout designed for quick reference during gameplay</li>
+                            <li>Custom map images created in Photoshop using layered filters to achieve a distinct visual style</li>
+                            <li>Deployed on GitHub Pages with Google Analytics for usage tracking</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This was a straightforward project focused on usability. The goal was to make something clean
+                        and functional rather than flashy - building a tool I'd actually want to use. Creating the map
+                        assets in Photoshop and experimenting with custom filters to get the right look was a fun creative
+                        challenge alongside the web development side.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/BO7-MAP-GUIDE/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/BO7-MAP-GUIDE" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
                             <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
                             <div class="timeline-company">JavaScript, Python, D3.js, Plotly.js, scikit-learn</div>
                         </div>
                         <div class="timeline-date">May 2025 - Jan 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline 
-                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy, 
-                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed 
+                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline
+                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy,
+                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed
                         1000+ raw match records with data cleaning and derived metrics.
-                        <div style="margin-top: 10px;">
-                            <a href="https://vaughnmcmanamna.github.io/cod_stats/" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view site →
-                            </a>
-                            <a href="https://github.com/vaughnmcmanamna/cod_stats" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                        </div>
                     </div>
                     <div class="timeline-details">
                         <p><strong>Technical Highlights:</strong></p>
@@ -407,109 +437,19 @@
                             <li>Deployed on GitHub Pages with automated data processing</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">3D Scene with Advanced Shaders & Textures</div>
-                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
-                        </div>
-                        <div class="timeline-date">2024</div>
-                    </div>
-                    <div class="timeline-description">
-                        Built an animated 3D scene demonstrating advanced graphics techniques including per-fragment lighting, 
-                        custom shaders, texture mapping, hierarchical transformations, and camera animation. Converted Phong 
-                        lighting from vertex to fragment shader for more accurate rendering, implemented Blinn-Phong model, 
-                        and created custom shader effects with detailed inline documentation. (don't judge a book by its cover)
-                        <div style="margin-top: 10px;">
-                            <a href="https://vaughnmcmanamna.github.io/305-A2/" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view demo →
-                            </a>
-                            <a href="https://github.com/vaughnmcmanamna/305-A2" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Shader Programming:</strong></p>
-                        <ul>
-                            <li><strong>Per-Fragment Lighting:</strong> Converted vertex shader lighting to fragment shader for more accurate illumination calculations on curved surfaces</li>
-                            <li><strong>Blinn-Phong Model:</strong> Implemented Blinn-Phong reflection model for more realistic specular highlights compared to standard Phong</li>
-                            <li><strong>Custom Shader Effects:</strong> Designed and documented custom GLSL shaders with line-by-line comments explaining the math and purpose</li>
-                            <li>Proper normal transformation using normal matrix for correct lighting under transformations</li>
-                        </ul>
-                        <p><strong>Scene Features:</strong></p>
-                        <ul>
-                            <li>Hierarchical models with multi-level transformations (body parts connected logically at joints)</li>
-                            <li>Multiple textures mapped meaningfully to objects beyond default UV coordinates</li>
-                            <li>360° camera fly-around using lookAt() - camera circles while focusing on a central point</li>
-                            <li>Real-time synchronization ensuring simulated time matches actual time</li>
-                            <li>Frame rate monitoring displayed every 2 seconds</li>
-                        </ul>
-                        <p><strong>Technical Implementation:</strong></p>
-                        <ul>
-                            <li>Proper rotation of hierarchical elements around connection points to prevent visual breakage</li>
-                            <li>Time-based animation using timestamp/delta time for consistent motion across different frame rates</li>
-                            <li>Texture handling with HTTP server setup to bypass browser security restrictions</li>
-                            <li>Clean code architecture with proper function separation and documentation</li>
-                        </ul>
-                        <p><strong>What I Learned:</strong></p>
-                        <p>This project deepened my understanding of the graphics pipeline, particularly the difference between 
-                        vertex and fragment shading. Moving lighting calculations to the fragment shader showed me how 
-                        per-pixel operations dramatically improve visual quality. Implementing Blinn-Phong taught me how small 
-                        mathematical optimizations (using half-vector instead of reflection vector) can both improve performance 
-                        and visual results. The custom shader work really cemented my understanding of GLSL and GPU programming.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">AI Portfolio Website</div>
-                            <div class="timeline-company">Machine Learning & AI Showcase</div>
-                        </div>
-                        <div class="timeline-date">2024-2025</div>
-                    </div>
-                    <div class="timeline-description">
-                        Interactive website showcasing machine learning and AI concepts I've learned throughout my studies. 
-                        Includes visual demonstrations and implementations of various ML algorithms and techniques.
-                        <div style="margin-top: 10px;">
-                            <a href="https://vaughnmcmanamna.github.io/AI-portfolio/index.html" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view site →
-                            </a>
-                            <a href="https://github.com/vaughnmcmanamna/AI-portfolio/" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                            
-                        </div>
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Key Features:</strong></p>
-                        <ul>
-                            <li>Visual demonstrations of supervised and unsupervised learning algorithms</li>
-                            <li>Interactive examples showing neural networks, decision trees, and clustering</li>
-                            <li>Explanations of key ML concepts with code examples</li>
-                            <li>Built with modern web technologies for smooth interactivity</li>
-                        </ul>
-                        <p><strong>What I Learned:</strong></p>
-                        <ul>
-                            <li>Deep understanding of ML algorithm internals through implementation</li>
-                            <li>How to explain complex technical concepts visually</li>
-                            <li>Web development skills for creating educational content</li>
-                        </ul>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/cod_stats/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/cod_stats" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
                     </div>
                 </div>
 
@@ -522,24 +462,10 @@
                         <div class="timeline-date">Jan 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Quick proof-of-concept NBA-themed Deal or No Deal game. Instead of money, cases contain NBA 
-                        players rated by my personal rankings. Play through 5 rounds (one per position: PG, SG, SF, PF, C) 
-                        selecting cases and getting banker offers. Built to practice game logic and state management - rough 
+                        Quick proof-of-concept NBA-themed Deal or No Deal game. Instead of money, cases contain NBA
+                        players rated by my personal rankings. Play through 5 rounds (one per position: PG, SG, SF, PF, C)
+                        selecting cases and getting banker offers. Built to practice game logic and state management - rough
                         around the edges but demonstrates core programming concepts.
-                        <div style="margin-top: 10px;">
-                            <a href="https://vaughnmcmanamna.github.io/Deal-or-No-Deal-NBA-EDITION/" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view site →
-                            </a>
-                            <a href="https://github.com/vaughnmcmanamna/Deal-or-No-Deal-NBA-EDITION" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                        </div>
                     </div>
                     <div class="timeline-details">
                         <p><strong>Game Concept:</strong></p>
@@ -557,109 +483,23 @@
                             <li>Vite for development workflow and Tailwind CSS for styling</li>
                         </ul>
                         <p><strong>Status:</strong></p>
-                        <p>This is a rough proof of concept built for practice and experimentation. It demonstrates 
-                        my ability to build interactive applications and handle complex game state, though it could use polish 
+                        <p>This is a rough proof of concept built for practice and experimentation. It demonstrates
+                        my ability to build interactive applications and handle complex game state, though it could use polish
                         in terms of UI/UX and additional features.</p>
                     </div>
-                </div>
-
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">3D Underwater Scene with WebGL</div>
-                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
-                        </div>
-                        <div class="timeline-date">2024</div>
-                    </div>
-                    <div class="timeline-description">
-                        Built an interactive 3D underwater scene from scratch using WebGL and GLSL shaders. Implemented 
-                        custom vertex and fragment shaders to handle lighting calculations (Phong illumination), managed 
-                        3D transformations with matrix math, and created procedurally generated geometry for spheres, 
-                        cylinders, and cones. Features animated fish, swaying seaweed, and bubble physics.
-                        <div style="margin-top: 10px;">
-                            <a href="https://vaughnmcmanamna.github.io/305-A1/main.html" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view demo →
-                            </a>
-                            <a href="https://github.com/vaughnmcmanamna/305-A1" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Graphics Programming from Scratch:</strong></p>
-                        <ul>
-                            <li><strong>Custom Shaders:</strong> Wrote GLSL vertex and fragment shaders to calculate lighting per-vertex using the Phong illumination model (ambient + diffuse + specular)</li>
-                            <li><strong>3D Math:</strong> Manually handled all transformation matrices (translation, rotation, scaling) and their multiplication order to position objects in 3D space</li>
-                            <li><strong>Normal Matrix Calculations:</strong> Computed inverse-transpose of model-view matrix to correctly transform surface normals for lighting</li>
-                            <li><strong>Procedural Geometry:</strong> Generated sphere, cylinder, and cone meshes by calculating vertex positions and normals using parametric equations</li>
-                        </ul>
-                        <p><strong>Scene Features:</strong></p>
-                        <ul>
-                            <li>Animated fish swimming in a circle - calculated circular motion path and tangent vectors for orientation</li>
-                            <li>Character with articulated legs - implemented hierarchical transformations with rotation constraints for realistic swimming motion</li>
-                            <li>Swaying seaweed made from ellipsoids with sine-wave animation</li>
-                            <li>Bubble system with randomized spawning and upward physics</li>
-                        </ul>
-                        <p><strong>Technical Challenges Solved:</strong></p>
-                        <ul>
-                            <li>Managing transformation matrix stack (push/pop) for hierarchical object modeling</li>
-                            <li>Synchronizing real-time animations using delta time calculations</li>
-                            <li>Calculating surface normals for curved geometry to achieve smooth lighting</li>
-                            <li>Understanding GPU pipeline - how vertices flow from JavaScript through shaders to pixels on screen</li>
-                        </ul>
-                        <p><strong>What I Learned:</strong></p>
-                        <p>This project gave me a deep understanding of how 3D graphics work at a low level. Instead of using a game engine, I had to implement everything from scratch - the math behind projections, how lighting actually works on surfaces, and how the GPU pipeline transforms 3D coordinates into 2D pixels. It's one thing to use a graphics library, but actually implementing the rendering pipeline yourself really cements the concepts.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">UVic Gym App Redesign</div>
-                            <div class="timeline-company">Figma</div>
-                        </div>
-                        <div class="timeline-date">2024</div>
-                    </div>
-                    <div class="timeline-description">
-                        Led prototyping and flow design for UVic gym booking system. Created interactive prototype 
-                        for booking, live occupancy, and schedules. Built components, click-through flows, and Draw.io 
-                        diagrams to map user interactions. Conducted user research and usability testing with a 4-person team.
-                        <div style="margin-top: 10px;">
-                            <a href="https://www.figma.com/proto/2AaZS9itD7CQx0L8bvBHfD/Csc-375?t=tZyUlZljshc8Zrfe-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=404-25&starting-point-node-id=403%3A5" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view project →
-                            </a>
-                        </div>
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Project Scope:</strong></p>
-                        <ul>
-                            <li>Redesigned the existing UVic gym booking interface to improve user experience</li>
-                            <li>Added live occupancy tracking to help students plan their visits</li>
-                            <li>Streamlined the booking flow to reduce confusion and errors</li>
-                            <li>Created schedule views for classes and equipment availability</li>
-                        </ul>
-                        <p><strong>My Role:</strong></p>
-                        <ul>
-                            <li>Led the prototyping effort in Figma, creating all major screens and interactions</li>
-                            <li>Built reusable components for consistent design across the app</li>
-                            <li>Created click-through prototypes for user testing sessions</li>
-                            <li>Developed workflow diagrams to document system processes and user flows</li>
-                        </ul>
-                        <p><strong>Outcomes:</strong></p>
-                        <ul>
-                            <li>User testing revealed 40% faster booking completion times</li>
-                            <li>Identified and fixed major pain points in the original interface</li>
-                            <li>Delivered a complete prototype ready for development handoff</li>
-                        </ul>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/Deal-or-No-Deal-NBA-EDITION/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/Deal-or-No-Deal-NBA-EDITION" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
                     </div>
                 </div>
 
@@ -672,17 +512,9 @@
                         <div class="timeline-date">2025</div>
                     </div>
                     <div class="timeline-description">
-                        Optimized a stamp combination problem using dynamic programming in Haskell. Reduced runtime 
-                        from exponential to polynomial time by storing and reusing previously computed results instead 
+                        Optimized a stamp combination problem using dynamic programming in Haskell. Reduced runtime
+                        from exponential to polynomial time by storing and reusing previously computed results instead
                         of recalculating them. This was my introduction to functional programming and efficient algorithm design.
-                        <div style="margin-top: 10px;">
-                            <a href="https://github.com/vaughnmcmanamna/330-A1/blob/master/stamps/Stamps.hs" target="_blank" 
-                               onclick="event.stopPropagation();" 
-                               style="display: inline-block; padding: 8px 16px; background: #000; color: white; 
-                                      text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                view code →
-                            </a>
-                        </div>
                     </div>
                     <div class="timeline-details">
                         <p><strong>The Challenge:</strong></p>
@@ -717,9 +549,220 @@
                         </ul>
                         
                         <p><strong>What I Learned:</strong></p>
-                        <p>This project taught me how to break down complex problems into smaller, manageable pieces and 
-                        how choosing the right algorithm can dramatically improve performance. It also introduced me to 
+                        <p>This project taught me how to break down complex problems into smaller, manageable pieces and
+                        how choosing the right algorithm can dramatically improve performance. It also introduced me to
                         functional programming, which approaches problems differently than traditional imperative programming.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://github.com/vaughnmcmanamna/330-A1/blob/master/stamps/Stamps.hs" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">AI Portfolio Website</div>
+                            <div class="timeline-company">Machine Learning & AI Showcase</div>
+                        </div>
+                        <div class="timeline-date">2024-2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        Interactive website showcasing machine learning and AI concepts I've learned throughout my studies.
+                        Includes visual demonstrations and implementations of various ML algorithms and techniques.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Visual demonstrations of supervised and unsupervised learning algorithms</li>
+                            <li>Interactive examples showing neural networks, decision trees, and clustering</li>
+                            <li>Explanations of key ML concepts with code examples</li>
+                            <li>Built with modern web technologies for smooth interactivity</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <ul>
+                            <li>Deep understanding of ML algorithm internals through implementation</li>
+                            <li>How to explain complex technical concepts visually</li>
+                            <li>Web development skills for creating educational content</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/AI-portfolio/index.html" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/AI-portfolio/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">3D Scene with Advanced Shaders & Textures</div>
+                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Built an animated 3D scene demonstrating advanced graphics techniques including per-fragment lighting,
+                        custom shaders, texture mapping, hierarchical transformations, and camera animation. Converted Phong
+                        lighting from vertex to fragment shader for more accurate rendering, implemented Blinn-Phong model,
+                        and created custom shader effects with detailed inline documentation. (don't judge a book by its cover)
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Shader Programming:</strong></p>
+                        <ul>
+                            <li><strong>Per-Fragment Lighting:</strong> Converted vertex shader lighting to fragment shader for more accurate illumination calculations on curved surfaces</li>
+                            <li><strong>Blinn-Phong Model:</strong> Implemented Blinn-Phong reflection model for more realistic specular highlights compared to standard Phong</li>
+                            <li><strong>Custom Shader Effects:</strong> Designed and documented custom GLSL shaders with line-by-line comments explaining the math and purpose</li>
+                            <li>Proper normal transformation using normal matrix for correct lighting under transformations</li>
+                        </ul>
+                        <p><strong>Scene Features:</strong></p>
+                        <ul>
+                            <li>Hierarchical models with multi-level transformations (body parts connected logically at joints)</li>
+                            <li>Multiple textures mapped meaningfully to objects beyond default UV coordinates</li>
+                            <li>360° camera fly-around using lookAt() - camera circles while focusing on a central point</li>
+                            <li>Real-time synchronization ensuring simulated time matches actual time</li>
+                            <li>Frame rate monitoring displayed every 2 seconds</li>
+                        </ul>
+                        <p><strong>Technical Implementation:</strong></p>
+                        <ul>
+                            <li>Proper rotation of hierarchical elements around connection points to prevent visual breakage</li>
+                            <li>Time-based animation using timestamp/delta time for consistent motion across different frame rates</li>
+                            <li>Texture handling with HTTP server setup to bypass browser security restrictions</li>
+                            <li>Clean code architecture with proper function separation and documentation</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project deepened my understanding of the graphics pipeline, particularly the difference between
+                        vertex and fragment shading. Moving lighting calculations to the fragment shader showed me how
+                        per-pixel operations dramatically improve visual quality. Implementing Blinn-Phong taught me how small
+                        mathematical optimizations (using half-vector instead of reflection vector) can both improve performance
+                        and visual results. The custom shader work really cemented my understanding of GLSL and GPU programming.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/305-A2/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view demo →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/305-A2" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">3D Underwater Scene with WebGL</div>
+                            <div class="timeline-company">JavaScript, WebGL, GLSL - CSC 305</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Built an interactive 3D underwater scene from scratch using WebGL and GLSL shaders. Implemented
+                        custom vertex and fragment shaders to handle lighting calculations (Phong illumination), managed
+                        3D transformations with matrix math, and created procedurally generated geometry for spheres,
+                        cylinders, and cones. Features animated fish, swaying seaweed, and bubble physics.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Graphics Programming from Scratch:</strong></p>
+                        <ul>
+                            <li><strong>Custom Shaders:</strong> Wrote GLSL vertex and fragment shaders to calculate lighting per-vertex using the Phong illumination model (ambient + diffuse + specular)</li>
+                            <li><strong>3D Math:</strong> Manually handled all transformation matrices (translation, rotation, scaling) and their multiplication order to position objects in 3D space</li>
+                            <li><strong>Normal Matrix Calculations:</strong> Computed inverse-transpose of model-view matrix to correctly transform surface normals for lighting</li>
+                            <li><strong>Procedural Geometry:</strong> Generated sphere, cylinder, and cone meshes by calculating vertex positions and normals using parametric equations</li>
+                        </ul>
+                        <p><strong>Scene Features:</strong></p>
+                        <ul>
+                            <li>Animated fish swimming in a circle - calculated circular motion path and tangent vectors for orientation</li>
+                            <li>Character with articulated legs - implemented hierarchical transformations with rotation constraints for realistic swimming motion</li>
+                            <li>Swaying seaweed made from ellipsoids with sine-wave animation</li>
+                            <li>Bubble system with randomized spawning and upward physics</li>
+                        </ul>
+                        <p><strong>Technical Challenges Solved:</strong></p>
+                        <ul>
+                            <li>Managing transformation matrix stack (push/pop) for hierarchical object modeling</li>
+                            <li>Synchronizing real-time animations using delta time calculations</li>
+                            <li>Calculating surface normals for curved geometry to achieve smooth lighting</li>
+                            <li>Understanding GPU pipeline - how vertices flow from JavaScript through shaders to pixels on screen</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project gave me a deep understanding of how 3D graphics work at a low level. Instead of using a game engine, I had to implement everything from scratch - the math behind projections, how lighting actually works on surfaces, and how the GPU pipeline transforms 3D coordinates into 2D pixels. It's one thing to use a graphics library, but actually implementing the rendering pipeline yourself really cements the concepts.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/305-A1/main.html" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view demo →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/305-A1" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">UVic Gym App Redesign</div>
+                            <div class="timeline-company">Figma</div>
+                        </div>
+                        <div class="timeline-date">2024</div>
+                    </div>
+                    <div class="timeline-description">
+                        Led prototyping and flow design for UVic gym booking system. Created interactive prototype
+                        for booking, live occupancy, and schedules. Built components, click-through flows, and Draw.io
+                        diagrams to map user interactions. Conducted user research and usability testing with a 4-person team.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Project Scope:</strong></p>
+                        <ul>
+                            <li>Redesigned the existing UVic gym booking interface to improve user experience</li>
+                            <li>Added live occupancy tracking to help students plan their visits</li>
+                            <li>Streamlined the booking flow to reduce confusion and errors</li>
+                            <li>Created schedule views for classes and equipment availability</li>
+                        </ul>
+                        <p><strong>My Role:</strong></p>
+                        <ul>
+                            <li>Led the prototyping effort in Figma, creating all major screens and interactions</li>
+                            <li>Built reusable components for consistent design across the app</li>
+                            <li>Created click-through prototypes for user testing sessions</li>
+                            <li>Developed workflow diagrams to document system processes and user flows</li>
+                        </ul>
+                        <p><strong>Outcomes:</strong></p>
+                        <ul>
+                            <li>User testing revealed 40% faster booking completion times</li>
+                            <li>Identified and fixed major pain points in the original interface</li>
+                            <li>Delivered a complete prototype ready for development handoff</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://www.figma.com/proto/2AaZS9itD7CQx0L8bvBHfD/Csc-375?t=tZyUlZljshc8Zrfe-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=404-25&starting-point-node-id=403%3A5" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view project →
+                        </a>
                     </div>
                 </div>
             </div>
