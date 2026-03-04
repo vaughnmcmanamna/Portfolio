@@ -367,6 +367,42 @@
                 <div class="timeline-item expandable" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
+                            <div class="timeline-title">Call of Duty Map Evaluator</div>
+                            <div class="timeline-company">Python, OpenCV, scikit-learn, NetworkX</div>
+                        </div>
+                        <div class="timeline-date">Mar 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        ML pipeline that analyzes Call of Duty minimap images to predict map playability scores for
+                        Hardpoint and Search & Destroy game modes. Extracts walkable space via alpha channel thresholding,
+                        constructs navigation graphs, and computes geometric metrics to quantify map flow and rotation quality.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Pipeline:</strong></p>
+                        <ul>
+                            <li>Extracts walkable space from minimap images using alpha channel thresholding</li>
+                            <li>Constructs navigation graphs from the walkable mask using NetworkX</li>
+                            <li>Computes geometric metrics: betweenness centrality, path diversity, and choke point severity</li>
+                            <li>Ridge Regression model predicts playability scores from geometry features</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>This project taught me how to frame a subjective design problem — "does this map play well?" — as a
+                        quantitative ML pipeline. Working with graph theory concepts like betweenness centrality to model choke
+                        points, and learning when simpler regression models outperform more complex ones on small datasets.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://github.com/vaughnmcmanamna/map_evaluator" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
                             <div class="timeline-title">Video Game Interactive Map Guide</div>
                             <div class="timeline-company">HTML, CSS, JavaScript, Photoshop</div>
                         </div>
@@ -771,10 +807,10 @@
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Dishwasher / Front of Staff / Cook</div>
+                            <div class="timeline-title">Front of Staff / Cook / Dishwasher</div>
                             <div class="timeline-company">Barb's Fish and Chips, Victoria BC</div>
                         </div>
-                        <div class="timeline-date">May 2025 - Nov 2025</div>
+                        <div class="timeline-date">May 2025 - present </div>
                     </div>
                     <div class="timeline-description">
                         <ul>
@@ -791,7 +827,7 @@
                             <div class="timeline-title">Warehouse and Delivery Assistant</div>
                             <div class="timeline-company">Vancouver Island Brewing, Victoria BC</div>
                         </div>
-                        <div class="timeline-date">May 2023 - Aug 2023</div>
+                        <div class="timeline-date">May 2024 - Aug 2024</div>
                     </div>
                     <div class="timeline-description">
                         <ul>
