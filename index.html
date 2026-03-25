@@ -367,6 +367,40 @@
                 <div class="timeline-item expandable" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
+                            <div class="timeline-title">Massive Datasets Algorithms — Apache Spark</div>
+                            <div class="timeline-company">Scala, Apache Spark — Systems for Massive Datasets</div>
+                        </div>
+                        <div class="timeline-date">Mar 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        Implemented classic large-scale data algorithms in Scala using Apache Spark RDDs. Covered
+                        probabilistic data structures for streaming data and locality-sensitive hashing for scalable
+                        document similarity — both designed to operate efficiently on datasets too large to fit in memory.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Streaming Algorithms (streams.scala):</strong></p>
+                        <ul>
+                            <li><strong>Bloom Filter:</strong> Distributed membership testing using parallel BitSet aggregation across Spark partitions; computed optimal bit count and hash function count from false positive rate</li>
+                            <li><strong>Flajolet-Martin:</strong> Cardinality estimation of distinct elements via trailing zero counting and median-of-averages summarization across groups of hash functions</li>
+                            <li><strong>Reservoir Sampling:</strong> Uniform random sampling over a stream with standing query support, maintaining statistical guarantees as elements arrive</li>
+                        </ul>
+                        <p><strong>Similarity Search (minhash.scala):</strong></p>
+                        <ul>
+                            <li><strong>Shingling & Jaccard:</strong> Tokenized documents into k-shingles and computed exact Jaccard similarity via set intersection/union over Spark RDDs</li>
+                            <li><strong>MinHash Signatures:</strong> Approximated Jaccard similarity using min-hash signatures to avoid full pairwise comparison</li>
+                            <li><strong>LSH Bucketing:</strong> Grouped documents into candidate pairs using band-based locality-sensitive hashing, reducing comparison space from O(n²)</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>Working with Spark forced me to think carefully about what data needs to be distributed vs. what
+                        can stay in the driver. Broadcasting large structures, using aggregate to build per-partition
+                        accumulators, and understanding when distributed computation actually helps — these were the
+                        real lessons beyond just implementing the algorithms themselves.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
                             <div class="timeline-title">Call of Duty Map Evaluator</div>
                             <div class="timeline-company">Python, OpenCV, scikit-learn, NetworkX</div>
                         </div>
