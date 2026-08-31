@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaughn McManamna - Portfolio</title>
+    <meta name="description" content="Vaughn McManamna's computer science portfolio: desktop tools, distributed algorithms, machine learning, data visualization, and graphics projects.">
+    <meta name="author" content="Vaughn McManamna">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vaughn McManamna — Computer Science Portfolio">
+    <meta property="og:description" content="Projects in desktop software, distributed systems, machine learning, data visualization, and computer graphics.">
+    <meta property="og:url" content="https://vaughnmcmanamna.github.io/Portfolio/">
+    <meta property="og:image" content="https://vaughnmcmanamna.github.io/Portfolio/assets/images/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://vaughnmcmanamna.github.io/Portfolio/">
+    <title>Vaughn McManamna — Computer Science Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -82,6 +91,15 @@
             display: block;
         }
 
+        .contact-top a:focus-visible,
+        .toggle-btn:focus-visible,
+        .timeline-item.expandable:focus-visible,
+        .archive-toggle:focus-visible,
+        #projects a:focus-visible {
+            outline: 3px solid #2f5bea;
+            outline-offset: 3px;
+        }
+
         .profile-picture {
             flex-shrink: 0;
         }
@@ -151,6 +169,10 @@
             display: block;
         }
 
+        [hidden] {
+            display: none !important;
+        }
+
         .timeline-item {
             margin-bottom: 35px;
             padding-bottom: 30px;
@@ -164,7 +186,7 @@
         }
 
         .timeline-item.expandable {
-            cursor: pointer;
+            cursor: default;
             padding: 15px;
             margin-left: -15px;
             margin-right: -15px;
@@ -173,6 +195,27 @@
 
         .timeline-item.expandable:hover {
             background-color: #fafafa;
+        }
+
+        .timeline-item.featured-project {
+            position: relative;
+            padding-top: 42px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .timeline-item.featured-project::before {
+            content: "Featured";
+            position: absolute;
+            top: 14px;
+            left: 15px;
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 0.72rem;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .timeline-header {
@@ -191,6 +234,16 @@
             color: #666;
             font-size: 0.95rem;
             margin-bottom: 2px;
+        }
+
+        #projects .timeline-company {
+            display: inline-block;
+            padding: 3px 8px;
+            border: 1px solid #e4e4e4;
+            border-radius: 999px;
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
         }
 
         .timeline-date {
@@ -246,6 +299,79 @@
 
         .timeline-details li {
             margin-bottom: 6px;
+        }
+
+        .project-demo {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background: #f5f5f5;
+        }
+
+        #projects a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        #projects a:hover {
+            background: #333;
+        }
+
+        .project-archive[hidden] {
+            display: none;
+        }
+
+        .archive-toggle {
+            display: block;
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #fafafa;
+            color: #333;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 600;
+        }
+
+        .archive-toggle:hover {
+            background: #f0f0f0;
+        }
+
+        .details-toggle {
+            margin-top: 12px;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #444;
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer {
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #333;
+            margin: 0 6px;
         }
 
         .class-tag {
@@ -311,20 +437,26 @@
         <!-- Contact Links -->
         <div class="contact-top">
             
-            <a href="https://github.com/vaughnmcmanamna" target="_blank">
+            <a href="https://github.com/vaughnmcmanamna" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
             </a>
-            <a href="https://www.linkedin.com/in/vaughn-mcmanamna" target="_blank">
+            <a href="https://www.linkedin.com/in/vaughn-mcmanamna" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
                 </svg>
             </a>
-            <a href="mailto:vaughnmcmanamna03@gmail.com">
+            <a href="mailto:vaughnmcmanamna03@gmail.com" aria-label="Email Vaughn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+            </a>
+            <a href="documents/resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="View résumé" title="View résumé">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/>
                 </svg>
             </a>
         </div>
@@ -332,20 +464,19 @@
         <!-- Header Section with Profile Picture and Name -->
         <div class="header-section">
             <div class="profile-picture">
-                <img src="profile.jpg" alt="Vaughn McManamna" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #e0e0e0;">
+                <img src="assets/images/profile.jpg" alt="Vaughn McManamna" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #e0e0e0;">
             </div>
             <div class="header-text">
                 <h1>Vaughn McManamna</h1>
-                <p class="subtitle">Computer Science Student | University of Victoria</p>
+                <p class="subtitle">Computer Science Graduate | University of Victoria</p>
             </div>
         </div>
         
         <div class="bio">
             <p>
-                I'm a 4th year Computer Science student at UVic based in Victoria, BC. I have a strong 
-                background in mathematics and statistics, with experience in machine learning and working 
-                with large-scale datasets. I build data-driven applications, focusing on turning data into meaningful insights through visualizations.I've also dipped my toes into functional programming and love Haskell for 
-                its elegance.
+                I'm a Computer Science graduate from UVic with a background in mathematics and statistics.
+                I'm especially interested in machine learning, distributed systems, and functional programming.
+                Recently, I built Drive Sorter, a desktop app that organizes Xbox Game Bar recordings using video metadata.
             </p>
         </div>
 
@@ -356,15 +487,58 @@
 
         <!-- Toggle Section -->
         <div class="toggle-container">
-            <div class="toggle-buttons">
-                <button class="toggle-btn active" onclick="showContent('projects')">Projects</button>
-                <button class="toggle-btn" onclick="showContent('work')">Work Experience</button>
-                <button class="toggle-btn" onclick="showContent('education')">Education</button>
+            <div class="toggle-buttons" role="tablist" aria-label="Portfolio sections">
+                <button id="projects-tab" class="toggle-btn active" type="button" role="tab" aria-selected="true" aria-controls="projects" onclick="showContent('projects', this)">Projects</button>
+                <button id="work-tab" class="toggle-btn" type="button" role="tab" aria-selected="false" aria-controls="work" onclick="showContent('work', this)">Work Experience</button>
+                <button id="education-tab" class="toggle-btn" type="button" role="tab" aria-selected="false" aria-controls="education" onclick="showContent('education', this)">Education</button>
             </div>
 
             <!-- Projects Content -->
-            <div id="projects" class="content-section active">
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+            <div id="projects" class="content-section active" role="tabpanel" aria-labelledby="projects-tab">
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Drive Sorter</div>
+                            <div class="timeline-company">Python, Tkinter, ffprobe</div>
+                        </div>
+                        <div class="timeline-date">Aug 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        A desktop utility for organizing Xbox Game Bar recordings into folders by game and year.
+                        It reads embedded video metadata, previews every planned move before making changes, and
+                        provides a responsive Windows 95-inspired interface for managing large clip libraries.
+                        The file workflows are backed by 20 automated tests.
+                    </div>
+                    <video class="project-demo" autoplay muted loop playsinline preload="metadata"
+                           poster="assets/images/drive-sorter-demo-poster.jpg"
+                           aria-label="Drive Sorter scanning and organizing a folder of game clips">
+                        <source src="assets/video/drive-sorter-demo.webm" type="video/webm">
+                        <source src="assets/video/drive-sorter-demo.mp4" type="video/mp4">
+                    </video>
+                    <div class="timeline-details">
+                        <p><strong>Features:</strong></p>
+                        <ul>
+                            <li>Uses ffprobe metadata instead of filenames to identify each game and recording year</li>
+                            <li>Scans clips concurrently and caches unchanged metadata for faster repeat scans</li>
+                            <li>Previews and confirms file moves, safely handles naming collisions, and sends clips with missing metadata to Unsorted</li>
+                            <li>Can flatten nested video folders, cancel active scans, and undo the most recent organize or flatten operation</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>Building Drive Sorter pushed me to design file operations defensively. I separated scanning,
+                        planning, and moving so users can review changes before they happen, kept slow metadata reads off
+                        Tkinter's main thread, and added persistent history so completed operations remain reversible.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://github.com/vaughnmcmanamna/drive-sorter" target="_blank"
+                           rel="noopener noreferrer" onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Massive Datasets Algorithms — Apache Spark</div>
@@ -396,9 +570,13 @@
                         accumulators, and understanding when distributed computation actually helps — these were the
                         real lessons beyond just implementing the algorithms themselves.</p>
                     </div>
+                    <div style="margin-top: 10px;">
+                        <a href="projects/massive-datasets/streams.scala" onclick="event.stopPropagation();">streaming source &rarr;</a>
+                        <a href="projects/massive-datasets/minhash.scala" onclick="event.stopPropagation();">MinHash source &rarr;</a>
+                    </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Call of Duty Map Evaluator</div>
@@ -434,7 +612,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Video Game Interactive Map Guide</div>
@@ -477,7 +655,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
@@ -523,7 +701,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Deal or No Deal - NBA Edition</div>
@@ -573,7 +751,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Stamp Coverage Problem Solver</div>
@@ -633,7 +811,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">AI Portfolio Website</div>
@@ -676,7 +854,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">3D Scene with Advanced Shaders & Textures</div>
@@ -736,7 +914,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">3D Underwater Scene with WebGL</div>
@@ -791,7 +969,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item expandable" onclick="toggleDetails(this)">
+                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">UVic Gym App Redesign</div>
@@ -835,9 +1013,12 @@
                         </a>
                     </div>
                 </div>
+                <button class="archive-toggle" type="button" aria-expanded="false" onclick="toggleArchive(this)">
+                    Show 7 more projects
+                </button>
             </div>
             <!-- Work Experience Content -->
-            <div id="work" class="content-section">
+            <div id="work" class="content-section" role="tabpanel" aria-labelledby="work-tab" hidden>
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div>
@@ -874,17 +1055,17 @@
             </div>
 
             <!-- Education Content -->
-            <div id="education" class="content-section">
+            <div id="education" class="content-section" role="tabpanel" aria-labelledby="education-tab" hidden>
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Bachelor of Science in Computer Science</div>
                             <div class="timeline-company">University of Victoria</div>
                         </div>
-                        <div class="timeline-date">Sep 2021 - Present</div>
+                        <div class="timeline-date">Sep 2021 - Spring 2026</div>
                     </div>
                     <div class="timeline-description">
-                        <p><strong>Expected Graduation:</strong> Spring 2026</p>
+                        <p><strong>Graduated:</strong> Spring 2026</p>
                         <p><strong>Focus:</strong> Machine Learning, Data Visualization, and Distributed Systems</p>
                     </div>
                 </div>
@@ -945,32 +1126,85 @@
                 </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <p>
+                <a href="mailto:vaughnmcmanamna03@gmail.com">Email</a>
+                <a href="documents/resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a>
+                <a href="https://github.com/vaughnmcmanamna" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/vaughn-mcmanamna" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+            <p>Victoria, BC · Updated August 2026</p>
+        </footer>
     </div>
 
     <script>
-        function showContent(section) {
+        function showContent(section, selectedTab) {
             document.querySelectorAll('.content-section').forEach(el => {
                 el.classList.remove('active');
+                el.hidden = true;
             });
             
             document.querySelectorAll('.toggle-btn').forEach(btn => {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
             });
             
-            document.getElementById(section).classList.add('active');
-            
-            event.target.classList.add('active');
+            const panel = document.getElementById(section);
+            panel.hidden = false;
+            panel.classList.add('active');
+            selectedTab.classList.add('active');
+            selectedTab.setAttribute('aria-selected', 'true');
         }
 
-        function toggleDetails(element) {
-            const details = element.querySelector('.timeline-details');
-            
-            if (details.classList.contains('show')) {
-                details.classList.remove('show');
-            } else {
-                details.classList.add('show');
-            }
+        function toggleDetails(button, details) {
+            const isOpen = details.classList.toggle('show');
+            button.setAttribute('aria-expanded', String(isOpen));
+            button.textContent = isOpen ? 'Hide project details' : 'Show project details';
         }
+
+        function toggleArchive(button) {
+            const projects = document.querySelectorAll('.project-archive');
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+            projects.forEach(project => {
+                project.hidden = isOpen;
+            });
+            button.setAttribute('aria-expanded', String(!isOpen));
+            button.textContent = isOpen ? 'Show 7 more projects' : 'Hide additional projects';
+        }
+
+        document.querySelectorAll('.timeline-item.expandable').forEach((card, index) => {
+            card.removeAttribute('onclick');
+            const details = card.querySelector('.timeline-details');
+            if (!details) return;
+
+            const detailsId = `project-details-${index + 1}`;
+            details.id = detailsId;
+
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'details-toggle';
+            button.textContent = 'Show project details';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-controls', detailsId);
+            button.addEventListener('click', () => toggleDetails(button, details));
+            details.before(button);
+        });
+
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.rel = 'noopener noreferrer';
+        });
+
+        const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('keydown', event => {
+                if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+                event.preventDefault();
+                const direction = event.key === 'ArrowRight' ? 1 : -1;
+                tabs[(index + direction + tabs.length) % tabs.length].focus();
+            });
+        });
     </script>
 </body>
 </html>

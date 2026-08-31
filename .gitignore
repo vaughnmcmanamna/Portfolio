@@ -1,0 +1,11 @@
+# Scala and Metals generated files
+.bsp/
+.metals/
+.scala-build/
+
+# Local editor settings
+.vscode/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
