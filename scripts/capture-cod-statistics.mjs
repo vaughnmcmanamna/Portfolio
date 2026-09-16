@@ -55,6 +55,12 @@ try {
   await page.evaluate(async () => {
     const excelDate = value => new Date((Number(value) - 25569) * 86400 * 1000);
     localStorage.removeItem('codStatsData');
+    state.data = [];
+    state.sortedData = [];
+    state.filteredData = [];
+    showNoDataState();
+    document.querySelector('.dashboard-insights-grid').style.display = 'none';
+    document.getElementById('miniVetoGuide').style.display = 'none';
 
     handleUpload = async function () {
       const input = document.getElementById('csvFileInput');
@@ -95,6 +101,8 @@ try {
 
       state.data = data;
       state.sortedData = [...data].sort((a, b) => a['UTC Timestamp'] - b['UTC Timestamp']);
+      document.querySelector('.dashboard-insights-grid').style.display = '';
+      document.getElementById('miniVetoGuide').style.display = '';
       populateControls(data);
       updateVisualization();
       feedback.textContent = `Success! Loaded ${data.length} matches.`;

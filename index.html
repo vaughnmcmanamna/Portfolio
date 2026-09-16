@@ -753,16 +753,18 @@
                 <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
-                            <div class="timeline-company">JavaScript, Python, D3.js, Plotly.js, scikit-learn</div>
+                            <div class="timeline-title">Call of Duty Performance Analytics Dashboard</div>
+                            <div class="timeline-company">JavaScript, D3.js, HTML/CSS, Python, FastAPI, PostgreSQL, Render, GitHub Pages</div>
                         </div>
                         <div class="timeline-date">May 2025 - Jan 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline
-                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy,
-                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed
-                        1000+ raw match records with data cleaning and derived metrics.
+                        <p>A full-stack analytics application that transforms match-history CSV files into an interactive
+                        performance dashboard. Users can explore win rates, map performance, game-mode results, consistency,
+                        session fatigue, and correlations between gameplay metrics.</p>
+                        <p>I built the frontend with vanilla JavaScript and D3.js, created a FastAPI backend for data
+                        processing, and used PostgreSQL for persistence. The responsive interface uses subtle Windows
+                        95-inspired styling, with the frontend deployed through GitHub Pages and the API hosted on Render.</p>
                     </div>
                     <video class="project-demo" autoplay muted loop playsinline preload="metadata"
                            poster="assets/images/cod-statistics-demo-poster.jpg"
@@ -771,20 +773,19 @@
                         <source src="assets/video/cod-statistics-demo.mp4" type="video/mp4">
                     </video>
                     <div class="timeline-details">
-                        <p><strong>Technical Highlights:</strong></p>
+                        <p><strong>Full-Stack Implementation:</strong></p>
                         <ul>
-                            <li>Processed 1000+ match records with extensive data cleaning and feature engineering</li>
-                            <li>Built Decision Tree classifier identifying key performance indicators (Score, Damage, K/D)</li>
-                            <li>Created modular architecture separating data handling, visualization, and ML predictions</li>
-                            <li>Implemented real-time filtering with pan/zoom controls and mobile-first 4:3 layouts</li>
-                            <li>Live prediction system with confidence metrics and evaluation outputs</li>
+                            <li>Designed both the vanilla JavaScript and D3.js frontend and the FastAPI data-processing backend</li>
+                            <li>Converted raw match data into focused insights across maps, modes, win rates, consistency, session fatigue, and metric correlations</li>
+                            <li>Validated uploaded CSV files and handled malformed or incomplete records gracefully</li>
+                            <li>Built several distinct interactive D3 visualizations with responsive layouts for smaller screens</li>
+                            <li>Deployed the frontend and backend separately through GitHub Pages and Render, with PostgreSQL persistence</li>
+                            <li>Added bundled sample data and graceful fallbacks for an unavailable, empty, or still-waking API</li>
+                            <li>Audited and refined the existing codebase for clearer structure, accessibility, and reliability</li>
                         </ul>
-                        <p><strong>Technologies:</strong></p>
-                        <ul>
-                            <li>Frontend: JavaScript, D3.js, Plotly.js for interactive visualizations</li>
-                            <li>Backend: Python with scikit-learn for machine learning pipeline</li>
-                            <li>Deployed on GitHub Pages with automated data processing</li>
-                        </ul>
+                        <p><strong>Technologies:</strong> JavaScript, D3.js, HTML/CSS, Python, FastAPI, PostgreSQL, Render, and GitHub Pages.</p>
+                        <p><strong>Project Goal:</strong> Turn raw match-history data into a concise set of insights that
+                        helps players understand their performance instead of simply displaying every available statistic.</p>
                     </div>
                     <div style="margin-top: 10px;">
                         <a href="https://vaughnmcmanamna.github.io/cod-statistics/" target="_blank"
