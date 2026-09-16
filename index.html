@@ -31,43 +31,57 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 20px 40px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
+            font-size: 2.1rem;
+            margin-bottom: 4px;
             color: #000;
             font-weight: 600;
             text-align: left;
         }
 
         .subtitle {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: 1.15rem;
+            color: #555;
             margin-bottom: 0;
             text-align: left;
-            font-weight: 400;
+            font-weight: 600;
             font-style: italic;
         }
 
+        .intro-section {
+            display: grid;
+            grid-template-columns: 112px minmax(0, 1fr);
+            grid-template-rows: auto auto auto;
+            column-gap: 24px;
+            row-gap: 10px;
+            margin-bottom: 24px;
+            align-items: start;
+        }
+
         .header-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            justify-content: center;
+            display: contents;
         }
 
         .header-text {
-            flex: 0 1 auto;
+            grid-column: 2;
+            grid-row: 1;
+            min-width: 0;
+            padding-right: 175px;
         }
 
         .contact-top {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: end;
+            position: relative;
+            z-index: 1;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 3px;
         }
 
         .contact-top a {
@@ -76,8 +90,8 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             background: #f5f5f5;
         }
@@ -101,7 +115,18 @@
         }
 
         .profile-picture {
+            grid-column: 1;
+            grid-row: 1 / span 2;
             flex-shrink: 0;
+        }
+
+        .profile-image {
+            display: block;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e0e0;
         }
 
         .profile-placeholder {
@@ -119,13 +144,68 @@
         }
 
         .bio {
-            margin-bottom: 50px;
+            grid-column: 2;
+            grid-row: 2;
+            margin: 0;
+            padding: 0 14px;
             color: #555;
-            line-height: 1.7;
-            text-align: center;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.55;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .skills-summary {
+            grid-column: 2;
+            grid-row: 3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px 20px;
+            margin: 0;
+            padding: 10px 14px;
+            border-radius: 6px;
+            background: #fafafa;
+            font-family: Arial, sans-serif;
+        }
+
+        .skills-summary p {
+            flex: 1 1 100%;
+            margin: 0;
+            color: #555;
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+
+        .skills-summary strong {
+            color: #444;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .skill-line {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px 10px;
+        }
+
+        .skill-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .language-icon {
+            display: block;
+            width: 20px;
+            height: 20px;
+            flex: 0 0 auto;
+            object-fit: contain;
+        }
+
+        .language-icon.c {
+            width: 18px;
         }
 
         .toggle-container {
@@ -135,7 +215,7 @@
         .toggle-buttons {
             display: flex;
             gap: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 22px;
             justify-content: center;
         }
 
@@ -305,10 +385,66 @@
             display: block;
             width: 100%;
             height: auto;
-            margin-top: 18px;
+            margin: 0;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
             background: #f5f5f5;
+        }
+
+        .project-card-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        #projects {
+            width: min(1100px, calc(100vw - 40px));
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .project-card-content {
+            min-width: 0;
+        }
+
+        .project-visual {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 24px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background: #f5f5f5;
+            color: #777;
+            text-align: center;
+        }
+
+        .project-visual-label {
+            font-family: Arial, sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .project-visual-title {
+            color: #555;
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .project-visual.has-media {
+            display: block;
+            aspect-ratio: auto;
+            padding: 0;
+            border: 0;
+            background: transparent;
         }
 
         #projects a {
@@ -402,7 +538,33 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 30px 15px;
+                padding: 24px 15px 30px;
+            }
+
+            .intro-section {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            #projects {
+                width: auto;
+                margin-left: 0;
+                transform: none;
+            }
+
+            .project-card-layout {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .project-card-content {
+                order: 1;
+            }
+
+            .project-visual {
+                order: 2;
             }
 
             h1 {
@@ -410,23 +572,63 @@
             }
 
             .header-section {
-                flex-direction: column;
-                text-align: center;
+                order: 1;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .header-text {
+                min-width: 0;
+                padding-right: 0;
+            }
+
+            .profile-image {
+                width: 90px;
+                height: 90px;
+            }
+
+            .contact-top {
+                order: 2;
+                align-self: center;
+                margin-top: 0;
+            }
+
+            .bio {
+                order: 3;
+            }
+
+            .skills-summary {
+                order: 4;
+                width: 100%;
             }
 
             h1, .subtitle {
-                text-align: center;
+                text-align: left;
             }
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.55rem;
+                line-height: 1.15;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+
+            .toggle-buttons {
+                gap: 6px;
             }
 
             .toggle-btn {
-                padding: 8px 20px;
-                font-size: 0.95rem;
+                flex: 1 1 0;
+                padding: 8px 5px;
+                font-size: 0.82rem;
+                white-space: nowrap;
             }
         }
 
@@ -434,6 +636,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="intro-section">
         <!-- Contact Links -->
         <div class="contact-top">
             
@@ -464,7 +667,7 @@
         <!-- Header Section with Profile Picture and Name -->
         <div class="header-section">
             <div class="profile-picture">
-                <img src="assets/images/profile.jpg" alt="Vaughn McManamna" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #e0e0e0;">
+                <img class="profile-image" src="assets/images/profile.jpg" alt="Vaughn McManamna">
             </div>
             <div class="header-text">
                 <h1>Vaughn McManamna</h1>
@@ -474,15 +677,23 @@
         
         <div class="bio">
             <p>
-                I'm a Computer Science graduate from UVic with a background in mathematics and statistics.
-                I'm especially interested in machine learning, distributed systems, and functional programming.
+                I'm a Computer Science graduate from UVic with a background in math and statistics.
+                I'm interested in machine learning, distributed systems, and functional programming.
                 Recently, I built Drive Sorter, a desktop app that organizes Xbox Game Bar recordings using video metadata.
             </p>
         </div>
 
-        <div style="max-width: 700px; margin: 0 auto 50px auto; padding: 20px; background: #fafafa; border-radius: 6px;">
-            <p style="margin-bottom: 8px; color: #555;"><strong>Languages:</strong> Python, C, JavaScript, Haskell, Rust (learning)</p>
-            <p style="margin-bottom: 0; color: #555;"><strong>Tools & Frameworks:</strong> SQL, Git, D3.js, scikit-learn, Plotly.js, pandas, NumPy, Figma, Vite</p>
+        <div class="skills-summary">
+            <p class="skill-line">
+                <strong>Languages:</strong>
+                <span class="skill-item"><img class="language-icon" src="assets/icons/python.svg" alt="">Python</span>
+                <span class="skill-item"><img class="language-icon c" src="assets/icons/c.png" alt="">C</span>
+                <span class="skill-item"><img class="language-icon" src="assets/icons/javascript.svg" alt="">JavaScript</span>
+                <span class="skill-item"><img class="language-icon" src="assets/icons/haskell.svg" alt="">Haskell</span>
+                <span class="skill-item"><img class="language-icon" src="assets/icons/rust.svg" alt="">Rust (learning)</span>
+            </p>
+            <p><strong>Tools & Frameworks:</strong> SQL, Git, D3.js, scikit-learn, Plotly.js, pandas, NumPy, Figma, Vite</p>
+        </div>
         </div>
 
         <!-- Toggle Section -->
@@ -504,10 +715,11 @@
                         <div class="timeline-date">Aug 2026</div>
                     </div>
                     <div class="timeline-description">
-                        A desktop utility for organizing Xbox Game Bar recordings into folders by game and year.
-                        It reads embedded video metadata, previews every planned move before making changes, and
-                        provides a responsive Windows 95-inspired interface for managing large clip libraries.
-                        The file workflows are backed by 20 automated tests.
+                        I had years of Xbox Game Bar clips scattered across my drives with useless filenames and no real
+                        organization, so I built Drive Sorter to clean them up. It reads metadata directly from each recording
+                        to figure out the game and date, previews exactly where everything will go, then organizes the clips
+                        into a clean Game &rarr; Year folder structure. What started as a script for my own mess eventually
+                        turned into a desktop app built to safely handle thousands of files.
                     </div>
                     <video class="project-demo" autoplay muted loop playsinline preload="metadata"
                            poster="assets/images/drive-sorter-demo-poster.jpg"
@@ -547,10 +759,14 @@
                         <div class="timeline-date">Mar 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Implemented classic large-scale data algorithms in Scala using Apache Spark RDDs. Covered
-                        probabilistic data structures for streaming data and locality-sensitive hashing for scalable
-                        document similarity — both designed to operate efficiently on datasets too large to fit in memory.
+                        Built Scala implementations of foundational large-scale data algorithms using Apache Spark,
+                        including Bloom filters, Flajolet-Martin cardinality estimation, reservoir sampling, MinHash,
+                        and locality-sensitive hashing. The project explores practical distributed-computing tradeoffs:
+                        partition-level aggregation, efficient data movement, and reducing expensive pairwise comparisons
+                        when working with datasets too large for a single machine.
                     </div>
+                    <img class="project-demo" src="assets/images/mmds-lsh-visual.svg"
+                         alt="Diagram showing mixed input records grouped into similar candidate buckets using MinHash and locality-sensitive hashing">
                     <div class="timeline-details">
                         <p><strong>Streaming Algorithms (streams.scala):</strong></p>
                         <ul>
@@ -669,6 +885,12 @@
                         created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed
                         1000+ raw match records with data cleaning and derived metrics.
                     </div>
+                    <video class="project-demo" autoplay muted loop playsinline preload="metadata"
+                           poster="assets/images/cod-statistics-demo-poster.jpg"
+                           aria-label="COD Statistics demo uploading sample match data and viewing the dashboard, analytics, and match history">
+                        <source src="assets/video/cod-statistics-demo.webm" type="video/webm">
+                        <source src="assets/video/cod-statistics-demo.mp4" type="video/mp4">
+                    </video>
                     <div class="timeline-details">
                         <p><strong>Technical Highlights:</strong></p>
                         <ul>
@@ -686,13 +908,13 @@
                         </ul>
                     </div>
                     <div style="margin-top: 10px;">
-                        <a href="https://vaughnmcmanamna.github.io/cod_stats/" target="_blank"
+                        <a href="https://vaughnmcmanamna.github.io/cod-statistics/" target="_blank"
                            onclick="event.stopPropagation();"
                            style="display: inline-block; padding: 8px 16px; background: #000; color: white;
                                   text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
                             view site →
                         </a>
-                        <a href="https://github.com/vaughnmcmanamna/cod_stats" target="_blank"
+                        <a href="https://github.com/vaughnmcmanamna/cod-statistics" target="_blank"
                            onclick="event.stopPropagation();"
                            style="display: inline-block; padding: 8px 16px; background: #000; color: white;
                                   text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
@@ -1022,16 +1244,16 @@
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Front of Staff / Cook / Dishwasher</div>
-                            <div class="timeline-company">Barb's Fish and Chips, Victoria BC</div>
+                            <div class="timeline-title">Front Counter Staff</div>
+                            <div class="timeline-company">Barb's Fish and Chips, Victoria, BC</div>
                         </div>
-                        <div class="timeline-date">May 2025 - present </div>
+                        <div class="timeline-date">May 2025 - Present</div>
                     </div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Juggled dishwashing, cooking, and front counter duties during busy shifts</li>
-                            <li>Kept the kitchen running smoothly and up to health standards</li>
-                            <li>Dealt with customer orders and handled the occasional complaint</li>
+                            <li>Delivered friendly, accurate front-counter service by taking orders, answering questions, and communicating wait times during high-volume shifts</li>
+                            <li>Resolved order issues and customer concerns calmly, coordinating with kitchen staff to provide prompt solutions</li>
+                            <li>Balanced customer service, cooking, and dishwashing responsibilities while shifting priorities to keep operations moving and maintain food safety standards</li>
                         </ul>
                     </div>
                 </div>
@@ -1040,15 +1262,15 @@
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Warehouse and Delivery Assistant</div>
-                            <div class="timeline-company">Vancouver Island Brewing, Victoria BC</div>
+                            <div class="timeline-company">Vancouver Island Brewing, Victoria, BC</div>
                         </div>
                         <div class="timeline-date">May 2024 - Aug 2024</div>
                     </div>
                     <div class="timeline-description">
                         <ul>
-                            <li>Loaded delivery trucks and organized shipments for local routes</li>
-                            <li>Helped with deliveries around Victoria, keeping to tight schedules</li>
-                            <li>Figured out logistics issues on the fly when things didn't go as planned</li>
+                            <li>Prepared and organized shipments for daily delivery routes, verifying orders and loading vehicles in an efficient stop sequence</li>
+                            <li>Supported route planning and deliveries across Victoria, adapting schedules around order priorities, traffic, and timing constraints</li>
+                            <li>Coordinated with warehouse and delivery staff to resolve missing items, last-minute changes, and other logistics issues while keeping orders accurate and on schedule</li>
                         </ul>
                     </div>
                 </div>
@@ -1173,6 +1395,53 @@
             button.setAttribute('aria-expanded', String(!isOpen));
             button.textContent = isOpen ? 'Show 7 more projects' : 'Hide additional projects';
         }
+
+        function createProjectVisual(card) {
+            const visual = document.createElement('div');
+            visual.className = 'project-visual';
+
+            const existingMedia = card.querySelector('.project-demo');
+            if (existingMedia) {
+                visual.classList.add('has-media');
+                visual.append(existingMedia);
+                return visual;
+            }
+
+            const projectTitle = card.querySelector('.timeline-title').textContent.trim();
+            visual.setAttribute('role', 'img');
+            visual.setAttribute('aria-label', `${projectTitle} project visual placeholder`);
+
+            const label = document.createElement('span');
+            label.className = 'project-visual-label';
+            label.textContent = 'Project visual';
+
+            const title = document.createElement('span');
+            title.className = 'project-visual-title';
+            title.textContent = projectTitle;
+
+            visual.append(label, title);
+            return visual;
+        }
+
+        function buildProjectCardLayout(card) {
+            const layout = document.createElement('div');
+            layout.className = 'project-card-layout';
+
+            const content = document.createElement('div');
+            content.className = 'project-card-content';
+
+            const visual = createProjectVisual(card);
+            Array.from(card.children).forEach(child => {
+                if (child !== visual && !child.classList.contains('project-demo')) {
+                    content.append(child);
+                }
+            });
+
+            layout.append(content, visual);
+            card.append(layout);
+        }
+
+        document.querySelectorAll('#projects .timeline-item.expandable').forEach(buildProjectCardLayout);
 
         document.querySelectorAll('.timeline-item.expandable').forEach((card, index) => {
             card.removeAttribute('onclick');

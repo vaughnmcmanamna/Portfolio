@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title description">
+  <title id="title">MinHash and locality-sensitive hashing visualization</title>
+  <desc id="description">Pixel-art record files pass through a MinHash executable and are sorted into three Windows 95-style bucket folders.</desc>
+
+  <defs>
+    <style>
+      .heading { fill: #000080; font: 700 18px Tahoma, "MS Sans Serif", Arial, sans-serif; }
+      .filename { fill: #000; font: 700 13px Tahoma, "MS Sans Serif", Arial, sans-serif; }
+      .pixel { shape-rendering: crispEdges; }
+    </style>
+
+    <g id="file-a" class="pixel">
+      <path d="M2 2 H28 L40 14 V52 H2 Z" fill="#fff" stroke="#000" stroke-width="2"/>
+      <path d="M28 2 V14 H40" fill="#c0c0c0" stroke="#000" stroke-width="2"/>
+      <rect x="7" y="21" width="7" height="7" fill="#000080"/>
+      <rect x="14" y="28" width="7" height="7" fill="#000080"/>
+      <rect x="21" y="21" width="7" height="14" fill="#000080"/>
+      <rect x="28" y="28" width="7" height="7" fill="#000080"/>
+      <rect x="7" y="40" width="28" height="5" fill="#808080"/>
+    </g>
+
+    <g id="file-b" class="pixel">
+      <path d="M2 2 H28 L40 14 V52 H2 Z" fill="#fff" stroke="#000" stroke-width="2"/>
+      <path d="M28 2 V14 H40" fill="#c0c0c0" stroke="#000" stroke-width="2"/>
+      <rect x="7" y="20" width="28" height="5" fill="#008080"/>
+      <rect x="7" y="28" width="18" height="5" fill="#008080"/>
+      <rect x="7" y="36" width="28" height="5" fill="#008080"/>
+      <rect x="7" y="44" width="14" height="4" fill="#808080"/>
+    </g>
+
+    <g id="file-c" class="pixel">
+      <path d="M2 2 H28 L40 14 V52 H2 Z" fill="#fff" stroke="#000" stroke-width="2"/>
+      <path d="M28 2 V14 H40" fill="#c0c0c0" stroke="#000" stroke-width="2"/>
+      <rect x="7" y="20" width="8" height="8" fill="#800080"/>
+      <rect x="17" y="20" width="8" height="8" fill="#808000"/>
+      <rect x="27" y="20" width="8" height="8" fill="#800000"/>
+      <rect x="7" y="31" width="8" height="8" fill="#808000"/>
+      <rect x="17" y="31" width="8" height="8" fill="#800000"/>
+      <rect x="27" y="31" width="8" height="8" fill="#800080"/>
+      <rect x="7" y="43" width="28" height="4" fill="#808080"/>
+    </g>
+
+    <g id="folder" class="pixel">
+      <path d="M2 16 V8 H38 L48 17 H92 V74 H2 Z" fill="#ffff80" stroke="#000" stroke-width="3"/>
+      <path d="M3 24 H91" stroke="#808000" stroke-width="3"/>
+      <path d="M7 29 H87 V68 H7 Z" fill="#fff" stroke="#808080" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="#c0c0c0"/>
+  <path d="M8 492 V8 H792" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M8 492 H792 V8" fill="none" stroke="#404040" stroke-width="3"/>
+
+  <text class="heading" x="42" y="55">INPUT RECORDS</text>
+  <text class="heading" x="330" y="55">MINHASH.EXE</text>
+  <text class="heading" x="545" y="55">MATCH BUCKETS</text>
+
+  <g transform="translate(42 84)">
+    <use href="#file-a" x="0" y="0"/>
+    <use href="#file-c" x="52" y="0"/>
+    <use href="#file-b" x="104" y="0"/>
+    <use href="#file-a" x="156" y="0"/>
+
+    <use href="#file-b" x="0" y="62"/>
+    <use href="#file-a" x="52" y="62"/>
+    <use href="#file-c" x="104" y="62"/>
+    <use href="#file-b" x="156" y="62"/>
+
+    <use href="#file-c" x="0" y="124"/>
+    <use href="#file-b" x="52" y="124"/>
+    <use href="#file-a" x="104" y="124"/>
+    <use href="#file-c" x="156" y="124"/>
+
+    <use href="#file-a" x="0" y="186"/>
+    <use href="#file-c" x="52" y="186"/>
+    <use href="#file-b" x="104" y="186"/>
+    <use href="#file-a" x="156" y="186"/>
+
+    <use href="#file-b" x="0" y="248"/>
+    <use href="#file-a" x="52" y="248"/>
+    <use href="#file-c" x="104" y="248"/>
+    <use href="#file-b" x="156" y="248"/>
+
+    <use href="#file-c" x="0" y="310"/>
+    <use href="#file-b" x="52" y="310"/>
+    <use href="#file-a" x="104" y="310"/>
+    <use href="#file-c" x="156" y="310"/>
+  </g>
+
+  <g class="pixel" transform="translate(320 130)">
+    <rect width="160" height="230" fill="#c0c0c0" stroke="#000" stroke-width="2"/>
+    <path d="M3 227 V3 H157" fill="none" stroke="#fff" stroke-width="3"/>
+    <path d="M3 227 H157 V3" fill="none" stroke="#404040" stroke-width="3"/>
+
+    <rect x="18" y="20" width="124" height="60" fill="#fff" stroke="#808080" stroke-width="2"/>
+    <rect x="30" y="33" width="16" height="12" fill="#000080"/>
+    <rect x="52" y="33" width="34" height="12" fill="#008080"/>
+    <rect x="92" y="33" width="38" height="12" fill="#800000"/>
+    <rect x="30" y="53" width="29" height="12" fill="#808000"/>
+    <rect x="65" y="53" width="18" height="12" fill="#800080"/>
+    <rect x="89" y="53" width="41" height="12" fill="#000080"/>
+
+    <path d="M80 92 V112" stroke="#000080" stroke-width="5"/>
+    <path d="M71 108 H89 L80 119 Z" fill="#000080"/>
+
+    <rect x="24" y="130" width="112" height="14" fill="#000080"/>
+    <rect x="24" y="154" width="112" height="14" fill="#008080"/>
+    <rect x="24" y="178" width="112" height="14" fill="#800000"/>
+
+    <rect x="24" y="205" width="112" height="12" fill="#fff" stroke="#808080" stroke-width="2"/>
+    <rect x="28" y="208" width="70" height="6" fill="#000080"/>
+  </g>
+
+  <path class="pixel" d="M246 239 H290 V228 L310 250 L290 272 V261 H246 Z" fill="#000080"/>
+  <path class="pixel" d="M490 239 H538 V228 L558 250 L538 272 V261 H490 Z" fill="#000080"/>
+
+  <g transform="translate(580 76)">
+    <g transform="scale(1.15)">
+      <use href="#folder"/>
+      <rect class="pixel" x="15" y="37" width="18" height="20" fill="#000080"/>
+      <rect class="pixel" x="37" y="37" width="18" height="20" fill="#000080"/>
+      <rect class="pixel" x="59" y="37" width="18" height="20" fill="#000080"/>
+      <text class="filename" x="46" y="96" text-anchor="middle">BUCKET_01</text>
+    </g>
+    <g transform="translate(0 135) scale(1.15)">
+      <use href="#folder"/>
+      <rect class="pixel" x="15" y="37" width="18" height="20" fill="#008080"/>
+      <rect class="pixel" x="37" y="37" width="18" height="20" fill="#008080"/>
+      <rect class="pixel" x="59" y="37" width="18" height="20" fill="#008080"/>
+      <text class="filename" x="46" y="96" text-anchor="middle">BUCKET_02</text>
+    </g>
+    <g transform="translate(0 270) scale(1.15)">
+      <use href="#folder"/>
+      <rect class="pixel" x="15" y="37" width="18" height="20" fill="#800080"/>
+      <rect class="pixel" x="37" y="37" width="18" height="20" fill="#800080"/>
+      <rect class="pixel" x="59" y="37" width="18" height="20" fill="#800080"/>
+      <text class="filename" x="46" y="96" text-anchor="middle">BUCKET_03</text>
+    </g>
+  </g>
+</svg>
