@@ -753,42 +753,95 @@
                 <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Massive Datasets Algorithms — Apache Spark</div>
-                            <div class="timeline-company">Scala, Apache Spark — Systems for Massive Datasets</div>
+                            <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
+                            <div class="timeline-company">JavaScript, Python, D3.js, Plotly.js, scikit-learn</div>
                         </div>
-                        <div class="timeline-date">Mar 2026</div>
+                        <div class="timeline-date">May 2025 - Jan 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Built Scala implementations of foundational large-scale data algorithms using Apache Spark,
-                        including Bloom filters, Flajolet-Martin cardinality estimation, reservoir sampling, MinHash,
-                        and locality-sensitive hashing. The project explores practical distributed-computing tradeoffs:
-                        partition-level aggregation, efficient data movement, and reducing expensive pairwise comparisons
-                        when working with datasets too large for a single machine.
+                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline
+                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy,
+                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed
+                        1000+ raw match records with data cleaning and derived metrics.
                     </div>
-                    <img class="project-demo" src="assets/images/mmds-lsh-visual.svg"
-                         alt="Diagram showing mixed input records grouped into similar candidate buckets using MinHash and locality-sensitive hashing">
+                    <video class="project-demo" autoplay muted loop playsinline preload="metadata"
+                           poster="assets/images/cod-statistics-demo-poster.jpg"
+                           aria-label="COD Statistics demo uploading sample match data and viewing the dashboard, analytics, and match history">
+                        <source src="assets/video/cod-statistics-demo.webm" type="video/webm">
+                        <source src="assets/video/cod-statistics-demo.mp4" type="video/mp4">
+                    </video>
                     <div class="timeline-details">
-                        <p><strong>Streaming Algorithms (streams.scala):</strong></p>
+                        <p><strong>Technical Highlights:</strong></p>
                         <ul>
-                            <li><strong>Bloom Filter:</strong> Distributed membership testing using parallel BitSet aggregation across Spark partitions; computed optimal bit count and hash function count from false positive rate</li>
-                            <li><strong>Flajolet-Martin:</strong> Cardinality estimation of distinct elements via trailing zero counting and median-of-averages summarization across groups of hash functions</li>
-                            <li><strong>Reservoir Sampling:</strong> Uniform random sampling over a stream with standing query support, maintaining statistical guarantees as elements arrive</li>
+                            <li>Processed 1000+ match records with extensive data cleaning and feature engineering</li>
+                            <li>Built Decision Tree classifier identifying key performance indicators (Score, Damage, K/D)</li>
+                            <li>Created modular architecture separating data handling, visualization, and ML predictions</li>
+                            <li>Implemented real-time filtering with pan/zoom controls and mobile-first 4:3 layouts</li>
+                            <li>Live prediction system with confidence metrics and evaluation outputs</li>
                         </ul>
-                        <p><strong>Similarity Search (minhash.scala):</strong></p>
+                        <p><strong>Technologies:</strong></p>
                         <ul>
-                            <li><strong>Shingling & Jaccard:</strong> Tokenized documents into k-shingles and computed exact Jaccard similarity via set intersection/union over Spark RDDs</li>
-                            <li><strong>MinHash Signatures:</strong> Approximated Jaccard similarity using min-hash signatures to avoid full pairwise comparison</li>
-                            <li><strong>LSH Bucketing:</strong> Grouped documents into candidate pairs using band-based locality-sensitive hashing, reducing comparison space from O(n²)</li>
+                            <li>Frontend: JavaScript, D3.js, Plotly.js for interactive visualizations</li>
+                            <li>Backend: Python with scikit-learn for machine learning pipeline</li>
+                            <li>Deployed on GitHub Pages with automated data processing</li>
                         </ul>
-                        <p><strong>What I Learned:</strong></p>
-                        <p>Working with Spark forced me to think carefully about what data needs to be distributed vs. what
-                        can stay in the driver. Broadcasting large structures, using aggregate to build per-partition
-                        accumulators, and understanding when distributed computation actually helps — these were the
-                        real lessons beyond just implementing the algorithms themselves.</p>
                     </div>
                     <div style="margin-top: 10px;">
-                        <a href="projects/massive-datasets/streams.scala" onclick="event.stopPropagation();">streaming source &rarr;</a>
-                        <a href="projects/massive-datasets/minhash.scala" onclick="event.stopPropagation();">MinHash source &rarr;</a>
+                        <a href="https://vaughnmcmanamna.github.io/cod-statistics/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/cod-statistics" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">AI Portfolio Website</div>
+                            <div class="timeline-company">Machine Learning & AI Showcase</div>
+                        </div>
+                        <div class="timeline-date">2024-2025</div>
+                    </div>
+                    <div class="timeline-description">
+                        Interactive website showcasing machine learning and AI concepts I've learned throughout my studies.
+                        Includes visual demonstrations and implementations of various ML algorithms and techniques.
+                    </div>
+                    <div class="timeline-details">
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Visual demonstrations of supervised and unsupervised learning algorithms</li>
+                            <li>Interactive examples showing neural networks, decision trees, and clustering</li>
+                            <li>Explanations of key ML concepts with code examples</li>
+                            <li>Built with modern web technologies for smooth interactivity</li>
+                        </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <ul>
+                            <li>Deep understanding of ML algorithm internals through implementation</li>
+                            <li>How to explain complex technical concepts visually</li>
+                            <li>Web development skills for creating educational content</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/AI-portfolio/index.html" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/AI-portfolio/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
                     </div>
                 </div>
 
@@ -874,52 +927,42 @@
                 <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Call of Duty Statistics Analyzer & Predictor</div>
-                            <div class="timeline-company">JavaScript, Python, D3.js, Plotly.js, scikit-learn</div>
+                            <div class="timeline-title">Massive Datasets Algorithms — Apache Spark</div>
+                            <div class="timeline-company">Scala, Apache Spark — Systems for Massive Datasets</div>
                         </div>
-                        <div class="timeline-date">May 2025 - Jan 2026</div>
+                        <div class="timeline-date">Mar 2026</div>
                     </div>
                     <div class="timeline-description">
-                        Developed a full-stack platform combining interactive visualizations with a Python ML pipeline
-                        to analyze Call of Duty match data. Built a Decision Tree classifier achieving 73.9% accuracy,
-                        created interactive D3.js and Plotly.js visualizations with real-time filtering, and processed
-                        1000+ raw match records with data cleaning and derived metrics.
+                        Built Scala implementations of foundational large-scale data algorithms using Apache Spark,
+                        including Bloom filters, Flajolet-Martin cardinality estimation, reservoir sampling, MinHash,
+                        and locality-sensitive hashing. The project explores practical distributed-computing tradeoffs:
+                        partition-level aggregation, efficient data movement, and reducing expensive pairwise comparisons
+                        when working with datasets too large for a single machine.
                     </div>
-                    <video class="project-demo" autoplay muted loop playsinline preload="metadata"
-                           poster="assets/images/cod-statistics-demo-poster.jpg"
-                           aria-label="COD Statistics demo uploading sample match data and viewing the dashboard, analytics, and match history">
-                        <source src="assets/video/cod-statistics-demo.webm" type="video/webm">
-                        <source src="assets/video/cod-statistics-demo.mp4" type="video/mp4">
-                    </video>
+                    <img class="project-demo" src="assets/images/mmds-lsh-visual.svg"
+                         alt="Diagram showing mixed input records grouped into similar candidate buckets using MinHash and locality-sensitive hashing">
                     <div class="timeline-details">
-                        <p><strong>Technical Highlights:</strong></p>
+                        <p><strong>Streaming Algorithms (streams.scala):</strong></p>
                         <ul>
-                            <li>Processed 1000+ match records with extensive data cleaning and feature engineering</li>
-                            <li>Built Decision Tree classifier identifying key performance indicators (Score, Damage, K/D)</li>
-                            <li>Created modular architecture separating data handling, visualization, and ML predictions</li>
-                            <li>Implemented real-time filtering with pan/zoom controls and mobile-first 4:3 layouts</li>
-                            <li>Live prediction system with confidence metrics and evaluation outputs</li>
+                            <li><strong>Bloom Filter:</strong> Distributed membership testing using parallel BitSet aggregation across Spark partitions; computed optimal bit count and hash function count from false positive rate</li>
+                            <li><strong>Flajolet-Martin:</strong> Cardinality estimation of distinct elements via trailing zero counting and median-of-averages summarization across groups of hash functions</li>
+                            <li><strong>Reservoir Sampling:</strong> Uniform random sampling over a stream with standing query support, maintaining statistical guarantees as elements arrive</li>
                         </ul>
-                        <p><strong>Technologies:</strong></p>
+                        <p><strong>Similarity Search (minhash.scala):</strong></p>
                         <ul>
-                            <li>Frontend: JavaScript, D3.js, Plotly.js for interactive visualizations</li>
-                            <li>Backend: Python with scikit-learn for machine learning pipeline</li>
-                            <li>Deployed on GitHub Pages with automated data processing</li>
+                            <li><strong>Shingling & Jaccard:</strong> Tokenized documents into k-shingles and computed exact Jaccard similarity via set intersection/union over Spark RDDs</li>
+                            <li><strong>MinHash Signatures:</strong> Approximated Jaccard similarity using min-hash signatures to avoid full pairwise comparison</li>
+                            <li><strong>LSH Bucketing:</strong> Grouped documents into candidate pairs using band-based locality-sensitive hashing, reducing comparison space from O(n²)</li>
                         </ul>
+                        <p><strong>What I Learned:</strong></p>
+                        <p>Working with Spark forced me to think carefully about what data needs to be distributed vs. what
+                        can stay in the driver. Broadcasting large structures, using aggregate to build per-partition
+                        accumulators, and understanding when distributed computation actually helps — these were the
+                        real lessons beyond just implementing the algorithms themselves.</p>
                     </div>
                     <div style="margin-top: 10px;">
-                        <a href="https://vaughnmcmanamna.github.io/cod-statistics/" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view site →
-                        </a>
-                        <a href="https://github.com/vaughnmcmanamna/cod-statistics" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view code →
-                        </a>
+                        <a href="projects/massive-datasets/streams.scala" onclick="event.stopPropagation();">streaming source &rarr;</a>
+                        <a href="projects/massive-datasets/minhash.scala" onclick="event.stopPropagation();">MinHash source &rarr;</a>
                     </div>
                 </div>
 
@@ -1025,49 +1068,6 @@
                     </div>
                     <div style="margin-top: 10px;">
                         <a href="https://github.com/vaughnmcmanamna/330-A1/blob/master/stamps/Stamps.hs" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view code →
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">AI Portfolio Website</div>
-                            <div class="timeline-company">Machine Learning & AI Showcase</div>
-                        </div>
-                        <div class="timeline-date">2024-2025</div>
-                    </div>
-                    <div class="timeline-description">
-                        Interactive website showcasing machine learning and AI concepts I've learned throughout my studies.
-                        Includes visual demonstrations and implementations of various ML algorithms and techniques.
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Key Features:</strong></p>
-                        <ul>
-                            <li>Visual demonstrations of supervised and unsupervised learning algorithms</li>
-                            <li>Interactive examples showing neural networks, decision trees, and clustering</li>
-                            <li>Explanations of key ML concepts with code examples</li>
-                            <li>Built with modern web technologies for smooth interactivity</li>
-                        </ul>
-                        <p><strong>What I Learned:</strong></p>
-                        <ul>
-                            <li>Deep understanding of ML algorithm internals through implementation</li>
-                            <li>How to explain complex technical concepts visually</li>
-                            <li>Web development skills for creating educational content</li>
-                        </ul>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <a href="https://vaughnmcmanamna.github.io/AI-portfolio/index.html" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view site →
-                        </a>
-                        <a href="https://github.com/vaughnmcmanamna/AI-portfolio/" target="_blank"
                            onclick="event.stopPropagation();"
                            style="display: inline-block; padding: 8px 16px; background: #000; color: white;
                                   text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
@@ -1236,7 +1236,7 @@
                     </div>
                 </div>
                 <button class="archive-toggle" type="button" aria-expanded="false" onclick="toggleArchive(this)">
-                    Show 7 more projects
+                    Show 6 more projects
                 </button>
             </div>
             <!-- Work Experience Content -->
@@ -1393,7 +1393,7 @@
                 project.hidden = isOpen;
             });
             button.setAttribute('aria-expanded', String(!isOpen));
-            button.textContent = isOpen ? 'Show 7 more projects' : 'Hide additional projects';
+            button.textContent = isOpen ? `Show ${projects.length} more projects` : 'Hide additional projects';
         }
 
         function createProjectVisual(card) {
