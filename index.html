@@ -753,6 +753,62 @@
                 <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
                     <div class="timeline-header">
                         <div>
+                            <div class="timeline-title">Deal or No Deal: NBA Roster Builder</div>
+                            <div class="timeline-company">React, TypeScript, Game Design, CSS Animation, Vitest, Local Storage, GitHub Pages</div>
+                        </div>
+                        <div class="timeline-date">Jan 2026 - Sep 2026</div>
+                    </div>
+                    <div class="timeline-description">
+                        An NBA roster-building game that combines <em>Deal or No Deal</em> mechanics with more than 500
+                        NBA players. Built with React and TypeScript, featuring rating-based rarity tiers, animated player
+                        cards, strategic banker offers, local team saving, and a responsive retro interface.
+                    </div>
+                    <video class="project-demo" autoplay muted loop playsinline preload="metadata"
+                           poster="assets/images/nba-dond-demo-poster.jpg"
+                           aria-label="NBA Deal or No Deal demo selecting cases, revealing players, reviewing banker offers, and completing a position">
+                        <source src="assets/video/nba-dond-demo.webm" type="video/webm">
+                        <source src="assets/video/nba-dond-demo.mp4" type="video/mp4">
+                    </video>
+                    <div class="timeline-details">
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>More than 500 NBA players organized using NBA 2K-style overall ratings</li>
+                            <li>Five rarity tiers with distinct visuals and animations</li>
+                            <li>Position-based roster construction across PG, SG, SF, PF, and C</li>
+                            <li>Dynamic banker offers based on the quality of the remaining players</li>
+                            <li>Animated briefcase reveals and offer dialogs</li>
+                            <li>Local saving for a player's best team</li>
+                            <li>Locally cached player portraits for faster loading</li>
+                            <li>Responsive Windows 95-inspired interface</li>
+                            <li>Automated tests for game logic, player data, and saved teams</li>
+                        </ul>
+                        <p><strong>Technical Highlight:</strong></p>
+                        <p>I designed the game logic to generate position-specific cases and calculate banker offers based
+                        on the quality of the remaining players. I also built a reusable rarity system that controls portrait
+                        styling, visual effects, animation timing, and player-card behavior across briefcases, drafted teams,
+                        saved teams, and banker offers.</p>
+                        <p><strong>Technologies:</strong> React, TypeScript, Vite, CSS animations, Vitest, ESLint, Local
+                        Storage, and GitHub Pages.</p>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://vaughnmcmanamna.github.io/Deal-or-No-Deal-NBA-EDITION/" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view site →
+                        </a>
+                        <a href="https://github.com/vaughnmcmanamna/Deal-or-No-Deal-NBA-EDITION" target="_blank"
+                           onclick="event.stopPropagation();"
+                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
+                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                            view code →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="timeline-item expandable featured-project" onclick="toggleDetails(this)">
+                    <div class="timeline-header">
+                        <div>
                             <div class="timeline-title">Call of Duty Performance Analytics Dashboard</div>
                             <div class="timeline-company">JavaScript, D3.js, HTML/CSS, Python, FastAPI, PostgreSQL, Render, GitHub Pages</div>
                         </div>
@@ -964,56 +1020,6 @@
                     <div style="margin-top: 10px;">
                         <a href="projects/massive-datasets/streams.scala" onclick="event.stopPropagation();">streaming source &rarr;</a>
                         <a href="projects/massive-datasets/minhash.scala" onclick="event.stopPropagation();">MinHash source &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="timeline-item expandable project-archive" onclick="toggleDetails(this)" hidden>
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Deal or No Deal - NBA Edition</div>
-                            <div class="timeline-company">JavaScript, Vite, Tailwind CSS</div>
-                        </div>
-                        <div class="timeline-date">Jan 2026</div>
-                    </div>
-                    <div class="timeline-description">
-                        Quick proof-of-concept NBA-themed Deal or No Deal game. Instead of money, cases contain NBA
-                        players rated by my personal rankings. Play through 5 rounds (one per position: PG, SG, SF, PF, C)
-                        selecting cases and getting banker offers. Built to practice game logic and state management - rough
-                        around the edges but demonstrates core programming concepts.
-                    </div>
-                    <div class="timeline-details">
-                        <p><strong>Game Concept:</strong></p>
-                        <ul>
-                            <li>Cases contain NBA players instead of dollar amounts</li>
-                            <li>Players are ranked based on my personal ratings system</li>
-                            <li>5 rounds of gameplay, each representing a basketball position (Point Guard, Shooting Guard, Small Forward, Power Forward, Center)</li>
-                            <li>Banker makes offers based on remaining player values and round progression</li>
-                        </ul>
-                        <p><strong>Technical Implementation:</strong></p>
-                        <ul>
-                            <li>Vanilla JavaScript for game logic - managing case selection, player reveals, and banker calculations</li>
-                            <li>State management to track opened cases, remaining players, and position-based rounds</li>
-                            <li>Real-time UI updates showing available cases and current game status</li>
-                            <li>Vite for development workflow and Tailwind CSS for styling</li>
-                        </ul>
-                        <p><strong>Status:</strong></p>
-                        <p>This is a rough proof of concept built for practice and experimentation. It demonstrates
-                        my ability to build interactive applications and handle complex game state, though it could use polish
-                        in terms of UI/UX and additional features.</p>
-                    </div>
-                    <div style="margin-top: 10px;">
-                        <a href="https://vaughnmcmanamna.github.io/Deal-or-No-Deal-NBA-EDITION/" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view site →
-                        </a>
-                        <a href="https://github.com/vaughnmcmanamna/Deal-or-No-Deal-NBA-EDITION" target="_blank"
-                           onclick="event.stopPropagation();"
-                           style="display: inline-block; padding: 8px 16px; background: #000; color: white;
-                                  text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                            view code →
-                        </a>
                     </div>
                 </div>
 
@@ -1237,7 +1243,7 @@
                     </div>
                 </div>
                 <button class="archive-toggle" type="button" aria-expanded="false" onclick="toggleArchive(this)">
-                    Show 6 more projects
+                    Show 5 more projects
                 </button>
             </div>
             <!-- Work Experience Content -->
