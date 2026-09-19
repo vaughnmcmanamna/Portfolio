@@ -1657,6 +1657,8 @@
         if (isLocalPreview) {
             showVisitorCount(0);
         } else {
+            // Render immediately so privacy tools cannot make the entire widget disappear.
+            showVisitorCount(0);
             fetch('https://vaughnmcmanamna.goatcounter.com/counter/TOTAL.json')
                 .then(response => {
                     if (!response.ok) throw new Error('Visitor counter unavailable');
@@ -1664,7 +1666,7 @@
                 })
                 .then(({ count }) => showVisitorCount(count))
                 .catch(() => {
-                    // Privacy tools may block analytics; keep the counter hidden in that case.
+                    // Keep the visible zero-state fallback when analytics are blocked.
                 });
         }
     </script>
