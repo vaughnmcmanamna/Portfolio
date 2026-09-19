@@ -117,6 +117,9 @@
         .profile-picture {
             grid-column: 1;
             grid-row: 1 / span 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             flex-shrink: 0;
         }
 
@@ -510,6 +513,115 @@
             margin: 0 6px;
         }
 
+        .visitor-count {
+            width: 108px;
+            margin-top: 10px;
+            padding: 3px;
+            border: 2px solid;
+            border-color: #fff #777 #777 #fff;
+            border-radius: 0;
+            background: #c8c8c8;
+            box-shadow: 2px 2px 0 #e2e2e2;
+            font-family: Arial, sans-serif;
+        }
+
+        .visitor-titlebar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 15px;
+            padding: 2px 3px;
+            background: #111;
+            color: #fff;
+            font-size: 0.46rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            line-height: 1;
+        }
+
+        .visitor-window-controls {
+            color: #ddd;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0;
+        }
+
+        .visitor-bits {
+            display: flex;
+            width: 100%;
+            padding: 4px 1px 2px;
+            justify-content: center;
+            gap: 2px;
+            perspective: 180px;
+        }
+
+        .visitor-bit {
+            display: inline-flex;
+            min-width: 0;
+            max-width: 19px;
+            height: 23px;
+            flex: 1 1 0;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            border-color: #777 #fff #fff #777;
+            border-radius: 0;
+            background: #f7f7f7;
+            color: #111;
+            font-family: 'Courier New', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            line-height: 1;
+            transform-origin: center;
+            will-change: transform;
+        }
+
+        .visitor-bit.is-one {
+            border-color: #555 #ddd #ddd #555;
+            background: #111;
+            color: #fff;
+        }
+
+        .visitor-bit.is-flipping {
+            animation: visitor-bit-flip 0.42s ease-in-out both;
+        }
+
+        @keyframes visitor-bit-flip {
+            0% {
+                transform: rotateX(0);
+            }
+            48% {
+                transform: rotateX(-90deg);
+            }
+            52% {
+                transform: rotateX(90deg);
+            }
+            100% {
+                transform: rotateX(0);
+            }
+        }
+
+        .visitor-label {
+            display: block;
+            margin-top: 1px;
+            padding: 2px;
+            border: 1px solid;
+            border-color: #888 #eee #eee #888;
+            color: #444;
+            font-size: 0.48rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            line-height: 1;
+            text-align: center;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .visitor-count,
+            .visitor-bit {
+                animation: none;
+                transition: none;
+            }
+        }
+
         .class-tag {
             display: inline-block;
             background: #f5f5f5;
@@ -668,6 +780,14 @@
         <div class="header-section">
             <div class="profile-picture">
                 <img class="profile-image" src="assets/images/profile.jpg" alt="Vaughn McManamna">
+                <div id="visitor-count" class="visitor-count" aria-live="polite" hidden>
+                    <span class="visitor-titlebar">
+                        <span>VISITORS</span>
+                        <span class="visitor-window-controls" aria-hidden="true">_ ×</span>
+                    </span>
+                    <span id="visitor-bits" class="visitor-bits" aria-hidden="true"></span>
+                    <span class="visitor-label">VISITS</span>
+                </div>
             </div>
             <div class="header-text">
                 <h1>Vaughn McManamna</h1>
@@ -1367,6 +1487,11 @@
         </footer>
     </div>
 
+    <script
+        data-goatcounter="https://vaughnmcmanamna.goatcounter.com/count"
+        async
+        src="https://gc.zgo.at/count.js">
+    </script>
     <script>
         function showContent(section, selectedTab) {
             document.querySelectorAll('.content-section').forEach(el => {
@@ -1481,6 +1606,67 @@
                 tabs[(index + direction + tabs.length) % tabs.length].focus();
             });
         });
+
+        const visitorCounter = document.getElementById('visitor-count');
+        const visitorBits = document.getElementById('visitor-bits');
+        const isLocalPreview = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)
+            || location.protocol === 'file:';
+
+        function showVisitorCount(count) {
+            const numericCount = Number(String(count).replaceAll(',', ''));
+            if (!Number.isSafeInteger(numericCount) || numericCount < 0) return;
+
+            const binaryCount = numericCount.toString(2).padStart(4, '0');
+            const bitTiles = Array.from(binaryCount, bit => {
+                const tile = document.createElement('span');
+                tile.className = 'visitor-bit';
+                tile.textContent = '0';
+                tile.dataset.targetBit = bit;
+                return tile;
+            });
+            visitorBits.replaceChildren(...bitTiles);
+            visitorCounter.setAttribute(
+                'aria-label',
+                `${numericCount.toLocaleString()} total visits, displayed as ${binaryCount} in binary`
+            );
+            visitorCounter.hidden = false;
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                bitTiles.forEach(tile => {
+                    tile.textContent = tile.dataset.targetBit;
+                    tile.classList.toggle('is-one', tile.dataset.targetBit === '1');
+                });
+                return;
+            }
+
+            bitTiles.forEach((tile, index) => {
+                const delay = index * 70;
+                setTimeout(() => {
+                    tile.classList.add('is-flipping');
+                    setTimeout(() => {
+                        tile.textContent = tile.dataset.targetBit;
+                        tile.classList.toggle('is-one', tile.dataset.targetBit === '1');
+                    }, 200);
+                    setTimeout(() => {
+                        tile.classList.remove('is-flipping');
+                    }, 430);
+                }, delay);
+            });
+        }
+
+        if (isLocalPreview) {
+            showVisitorCount(0);
+        } else {
+            fetch('https://vaughnmcmanamna.goatcounter.com/counter/TOTAL.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Visitor counter unavailable');
+                    return response.json();
+                })
+                .then(({ count }) => showVisitorCount(count))
+                .catch(() => {
+                    // Privacy tools may block analytics; keep the counter hidden in that case.
+                });
+        }
     </script>
 </body>
 </html>
