@@ -1659,7 +1659,7 @@
         } else {
             // Render immediately so privacy tools cannot make the entire widget disappear.
             showVisitorCount(0);
-            fetch('https://vaughnmcmanamna.goatcounter.com/counter/TOTAL.json')
+            fetch('https://vaughnmcmanamna.goatcounter.com/counter/%2FPortfolio%2F.json')
                 .then(response => {
                     if (!response.ok) throw new Error('Visitor counter unavailable');
                     return response.json();
